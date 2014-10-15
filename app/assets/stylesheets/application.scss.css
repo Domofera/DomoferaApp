@@ -21,3 +21,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.logo {
+	width: 100px;
+}
+
