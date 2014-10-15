@@ -22,7 +22,7 @@
 	width: 100px;
 }
 
-@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,700);
 
 
 ::-moz-selection {
@@ -68,8 +68,7 @@
 
 
 body {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
     font-size: 16px;
 
     -webkit-font-smoothing: antialiased;
@@ -77,7 +76,6 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-weight: 700;
     color: #4a4a4a;
 }
 
@@ -110,7 +108,7 @@ h1, h2, h3, h4, h5, h6 {
    ========================================================================== */
 
 #headerwrap {
-    background: url(../img/back.jpg) no-repeat center top;
+    background: url(official/preview.jpg) no-repeat center top;
     background-color: #0CB6B6;
     padding-top: 50px;
     text-align:center;
@@ -131,17 +129,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #headerwrap h1 {
-    color:#ffffff;
     padding-top: 10px;
     padding-bottom: 20px;
     letter-spacing: 4px;
     font-size: 80px;
-    font-weight: bold;
+    color: white;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
 }
 
 #headerwrap h4 {
-    font-size: 30px;
-    color: #ffffff
+    font-size: 50px;
+    color: white;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
 }
 
 #social {
@@ -229,8 +228,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn-domofera {
     background-color: #e75a2c;
-    border-style: none;
-    border-radius: 0px;
+    border: none;
+    border-radius: 0;
     color: white;
     width: 150px;
 }
