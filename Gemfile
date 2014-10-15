@@ -4,6 +4,9 @@ gem 'rails', '4.1.4'
 gem 'pg'
 gem 'uglifier', '>= 1.3.0'
 
+#frontend
+gem 'bower-rails'
+
 #style
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'sass-rails', '>= 3.2'
