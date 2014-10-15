@@ -14,6 +14,8 @@ home.config([ '$routeProvider',
 ])
 
 controllers = angular.module('controllers',[])
+
 controllers.controller("HomeController", [ '$scope',
   ($scope)->
+    
 ])
