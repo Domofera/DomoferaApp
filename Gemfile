@@ -6,9 +6,11 @@ gem 'uglifier', '>= 1.3.0'
 
 #frontend
 gem 'bower-rails'
+gem 'angular-rails-templates'
 
 #style
 gem 'bootstrap-sass', '~> 3.2.0'
+gem 'sass', '3.2.19'
 gem 'sass-rails', '>= 3.2'
 gem 'font-awesome-rails'
 gem 'bootstrap_form'
@@ -37,6 +39,12 @@ group :test, :development do
   gem "database_cleaner"
   gem "selenium-webdriver"
   gem "faker"
+end
+
+group :production, :staging do
+  gem "rails_12factor"
+  gem "rails_stdout_logging"
+  gem "rails_serve_static_assets"
 end
 
 

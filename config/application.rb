@@ -31,3 +31,5 @@ module Domoferaapp
     config.assets.precompile << %r(.*.(?:eot|svg|ttf|woff)$)
   end
 end
+
+
