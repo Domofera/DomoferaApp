@@ -1,21 +1,15 @@
-home = angular.module('home',[
-  'templates',
-  'ngRoute',
-  'controllers',
-])
-
-home.config([ '$routeProvider',
+app.config([ '$routeProvider',
   ($routeProvider)->
     $routeProvider
       .when('/',
         templateUrl: "index.html"
         controller: 'HomeController'
       )
+      .when('/login',
+        templateUrl: "login.html"
+        controller: 'UserController'
+      )
 ])
 
-controllers = angular.module('controllers',[])
 
-controllers.controller("HomeController", [ '$scope',
-  ($scope)->
-    
-])
+
