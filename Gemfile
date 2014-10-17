@@ -30,7 +30,7 @@ gem 'email_validator'
 gem 'pundit'
 gem 'bcrypt', '~> 3.1.7'
 
-
+gem "foreman"
 group :test, :development do
   gem "rspec"
   gem "rspec-rails", "~> 2.0"
