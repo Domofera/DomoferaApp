@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
  root 'home#index'
- get '/login', to: 'user#login'
+ resources :users, only: [:index]
 end
