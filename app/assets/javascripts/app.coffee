@@ -1,15 +1,21 @@
-app.config([ '$routeProvider',
-  ($routeProvider)->
-    $routeProvider
+@domoferaapp = angular.module('domoferaapp', [
+  'templates',
+  'ngRoute',
+  'controllers'
+  ])
+
+@domoferaapp.config(['$routeProvider', ($routeProvider) ->
+  $routeProvider
       .when('/',
         templateUrl: "index.html"
         controller: 'HomeController'
-      )
-      .when('/login',
-        templateUrl: "login.html"
-        controller: 'UserController'
+      ).when('/users',
+        templateUrl: "users/index.html"
+        controller: 'UsersController'
       )
 ])
+
+
 
 
 

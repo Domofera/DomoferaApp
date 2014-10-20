@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="domoferaapp">
 <head>
   <title>Domoferaapp</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -10,8 +10,7 @@
   <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> -->
   <%= csrf_meta_tags %>
 </head>
-<body>
-
+<body ng-view>
 <%= yield %>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
