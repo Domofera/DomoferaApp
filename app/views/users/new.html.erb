@@ -1,22 +1,5 @@
-<div id="headerwrap">
-    <div class="container">
-		<div class="row">
-			<div class="col-lg-6 col-lg-offset-3">
-				<img ng-src={{logoDomofera}} alt="Domofera Logo" class="logo"/>
-				<h1>DOMOFERA</h1>
-			</div>
-			<div class="col-md-4 col-md-offset-4">
-				<%= bootstrap_form_for @project, inline_errors: false, :html => {:class => 'form-login'}, :remote => false do |f| %>
-				<h2 class="form-login-heading">Nuevo Usuario</h2>
-				<div class="login-wrap">
-					<%= f.text_field :name %>
-					<%= f.text_field :email %>
-					<%= f.password_field :password %>
-					<%= f.password_field :password_confirmation %>
-					<button class="btn btn-theme btn-block" type="submit">Submit</button>
-				</div>
-			<% end %>
-			</div>
-		</div>
-    </div>
+<div ng-controller = "UsersController">
+  <div class="view-animate-container">
+    <div ng-view class="view-animate"></div>
+  </div>
 </div>
