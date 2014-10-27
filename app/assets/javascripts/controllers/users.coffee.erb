@@ -10,21 +10,21 @@ controllers.controller('UsersController', ['$scope', '$routeParams', '$resource'
       }
     )
 
-    # if $routeParams.userId
-    #   User.get({userId: $routeParams.userId},
-    #   ((user)-> $scope.user = user ),
-    #   ((httpResponse)->
-    #     $scope.user = null
-    #     flash.error = "No existe el usuario."
-    #     )
-    #   )
-    # else
-    #   $scope.user = {}
-    #   $scope.save = ->
-    #     onError (_httpResponse)-> flash.error = "Algo salio mal"
-    #     if $scope.user.id
-    #       $scope.user.$save(
-    #         (()-> $location.path("/users/#{"newUser.id"}")),
-    #         onError
-    #       )
+    if $routeParams.userId
+      User.get({userId: $routeParams.userId},
+      ((user)-> $scope.user = user ),
+      ((httpResponse)->
+        $scope.user = null
+        flash.error = "No existe el usuario."
+        )
+      )
+    else
+      $scope.user = {}
+      $scope.save = ->
+        onError (_httpResponse)-> flash.error = "Algo salio mal"
+        if $scope.user.id
+          $scope.user.$save(
+            (()-> $location.path("/users/#{"newUser.id"}")),
+            onError
+          )
 ])
