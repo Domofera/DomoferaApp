@@ -16,6 +16,7 @@ Bundler.require(*Rails.groups)
 module Domoferaapp
   class Application < Rails::Application
     config.assets.initialize_on_precompile = false
+    config.serve_static_assets = true
     config.before_configuration do
         env_file = File.join(Rails.root, 'config', 'initializers/app_env_vars.yml')
         YAML.load(File.open(env_file)).each do |key, value|
