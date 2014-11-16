@@ -17,8 +17,8 @@ class UsersController < ApplicationController
 	end
 
 	def create
-		token = SecureRandom.urlsafe_base64(24)
-		@user = User.new user_params.merge(confirmation_token: token)
+		@token = SecureRandom.urlsafe_base64(24)
+		@user = User.new user_params.merge(confirmation_token: @token)
   		if @user.save
   			UserMailer.signup_confirmation(@user).deliver
   			flash[:notice] = "¡Último paso! Mira en tu bandeja de entrada, recibirás un email con el link de activación."
