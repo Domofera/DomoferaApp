@@ -1,5 +1,36 @@
-<div ng-controller = "UsersController">
-  <div class="view-animate-container">
-    <div ng-view class="view-animate"></div>
-  </div>
-</div>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Domofera - Registro de Usuario</title>
+	<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+  <body>
+    <div id="page-content">
+      <header id="top" class="header">
+        <div class="text-vertical-center">
+          <%= image_tag("official/logo.png", alt: "Logo Domofera") %>
+          <h1 class="main-title">Domofera</h1>
+          <h3 class="main-title">La APP de los agricultores Urbanos</h3>
+            <%= render :partial => "shared/flash_messages.html.erb" %>
+            <div class="form-signin">
+            <%= form_for @user, inline_errors: false, :class => 'form-signin', :remote => false do |f| %>
+				        <div class="login-wrap">
+					        <%= f.text_field :username, :class => 'form-control', :placeholder => 'Nombre de usuario' %>
+					        <%= f.text_field :email, :class => 'form-control', :placeholder => 'Email'  %>
+                  <%= f.text_field :city, :class => 'form-control', :placeholder => 'Ciudad'  %>
+                  <%= f.text_field :country, :class => 'form-control', :placeholder => 'País'  %>
+        					<%= f.password_field :password, :class => 'form-control', :placeholder => 'Contraseña'   %>
+        					<%= f.password_field :password_confirmation, :class => 'form-control', :placeholder => 'Repetir contraseña'   %>
+      					  <%= f.submit "Enviar datos", :class => 'btn btn-lg btn-block', :placeholder => 'Nombre de usuario'  %>
+      				</div>
+      			<% end %>
+          </div>
+            <h4>¿Ya tienes cuenta? Entonces <%= link_to "inicia sesión", login_path ,:remote => false %></h4>
+         </div>
+       </header>
+     </footer>
+   </div>
+ </body>
+</html>

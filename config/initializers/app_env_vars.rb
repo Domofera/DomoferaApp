@@ -1,0 +1,5 @@
+ENV['MAILGUN_SMTP_PORT'] = '587'
+ENV['MAILGUN_SMTP_SERVER'] = 'smtp.mailgun.org'
+ENV['MAILGUN_SMTP_LOGIN'] = 'postmaster@domofera.herokuapp.com'
+ENV['MAILGUN_SMTP_PASSWORD'] = 'dc368ff6d2f9b85a417001c2f9639573'
+ENV['DOMOFERA_DATABASE_PASSWORD'] = "domofera2014"

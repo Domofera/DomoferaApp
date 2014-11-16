@@ -11,20 +11,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141026151424) do
+ActiveRecord::Schema.define(version: 20141115124220) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "sensors", force: true do |t|
+    t.integer  "terminal_id"
+    t.string   "type"
+    t.string   "value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "terminals", force: true do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.text     "description"
+    t.string   "password"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: true do |t|
     t.string   "username"
     t.string   "email"
-    t.string   "country"
-    t.string   "city"
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.string   "password_hash"
     t.string   "password_salt"
+    t.string   "confirmation_token"
+    t.boolean  "confirmed", default: false
+    t.string   "session_token"
+    t.string   "city"
+    t.string   "country"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

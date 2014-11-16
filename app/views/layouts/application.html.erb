@@ -1,27 +1,16 @@
 <!DOCTYPE html>
-<html ng-app="domoferaapp">
+<html>
 <head>
-  <title>Domoferaapp</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <title>Domofera - Dashboard</title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-  <%= favicon_link_tag 'official/logo.png', type: 'image/png' %>
-
-  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> -->
   <%= csrf_meta_tags %>
 </head>
-<body ng-view>
-<%= yield %>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-55807164-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
+<body class="<%= controller_name %> <%= action_name %>" id="page-body">
+<%= render "shared/flash_messages" %>
+<div class="top-menu">
+<div id="page-content">
+  <%= yield %>
+</div>
 </body>
 </html>

@@ -1,5 +1,5 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe HomeController do
+RSpec.describe HomeController, :type => :controller do
 
 end

@@ -1,9 +1,0 @@
-# A sample Bowerfile
-# Check out https://github.com/42dev/bower-rails#ruby-dsl-configuration for more options
-
-asset 'angular'
-asset 'angular-route'
-asset 'angular-resource'
-asset 'angular-flash'
-asset 'bootstrap-sass-official'
-# vim: ft=ruby

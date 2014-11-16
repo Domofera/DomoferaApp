@@ -1,0 +1,54 @@
+<div id="wrapper">
+  <%= render "layouts/sidebar" %>
+  <div id="page-content-wrapper">
+      <div class="container-fluid">
+          <div class="row">
+            <h1>Principal</h1>
+            <%= link_to "Log out", log_out_path, :method => "delete" ,:class => "logout", 'data-no-turbolink' => true , :remote => false %>
+            <h2>Datos Meteorológicos para la ciudad de <p id="city-name"><%= current_user.city %></p></h2>
+            <h2 id="description"></h2>
+              <div class="col-lg-3">
+                    <div class="panel panel-data">
+                        <div class="panel-heading">
+                          <div><img id="icon"/></div>
+                          Temperatura</div>
+                        <div class="panel-body">
+                          <h2 id="temperature"></h2>
+                        </div>
+                    </div>
+              </div>
+              <div class="col-lg-3">
+                    <div class="panel panel-data centered">
+                        <div class="panel-heading">
+                          <div class="icon flaticon-drop4"></div>
+                          Humedad</div>
+                      <div class="panel-body">
+                        <h2 id="humidity"></h2>
+                      </div>
+                    </div>
+              </div>
+              <div class="col-lg-3">
+                    <div class="panel panel-data">
+                      <div class="panel-heading">
+                        <div class="icon flaticon-barometer"></div>
+                        Presión Atmosférica</div>
+                      <div class="panel-body">
+                        <h2 id="pressure"></h2>
+                      </div>
+                    </div>
+              </div>
+              <div class="col-lg-3">
+                    <div class="panel panel-data">
+                      <div class="panel-heading">
+                        <div class="icon flaticon-winds2"></div>
+                        Viento</div>
+                      <div class="panel-body">
+                        <h2 id="wind"></h2>
+                      </div>
+                    </div>
+              </div>
+          </div>
+          <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Cerrar Menu</a>
+      </div>
+  </div>
+</div>
