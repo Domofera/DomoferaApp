@@ -12,8 +12,15 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.easing.min.js
+//= require bootstrap.min.js
 //= require turbolinks
-//= require_tree .
+
+
+// RailsAjax
+//= require jquery.history
+//= require jquery.rails-ajax
+//= require RailsAjax-Config
 
 $("#menu-toggle").click(function(e) {
     e.preventDefault();
