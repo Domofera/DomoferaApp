@@ -22,7 +22,4 @@
 //= require jquery.rails-ajax
 //= require RailsAjax-Config
 
-$("#menu-toggle").click(function(e) {
-    e.preventDefault();
-    $("#wrapper").toggleClass("toggled");
-});
+console.log("loaded");
