@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20141115124220) do
     t.string   "password_hash"
     t.string   "password_salt"
     t.string   "confirmation_token"
-    t.boolean  "confirmed", default: false
+    t.boolean  "confirmed",          default: false
     t.string   "session_token"
     t.string   "city"
     t.string   "country"
