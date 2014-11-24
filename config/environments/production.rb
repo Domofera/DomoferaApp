@@ -76,9 +76,12 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  module AuthorizeApp
-    class Application < Rails::Application
-      ActionMailer::Base.smtp_settings = {
+config.action_mailer.perform_deliveries = true
+config.action_mailer.raise_delivery_errors = true
+config.action_mailer.delivery_method = :smtp
+module AuthorizeApp
+  class Application < Rails::Application
+    ActionMailer::Base.smtp_settings = {
       :port =>           ENV['MANDRILL_SMTP_PORT'],
       :address =>        ENV['MANDRILL_SMTP_SERVER'],
       :user_name =>      ENV['MANDRILL_USERNAME'],
@@ -86,7 +89,6 @@ Rails.application.configure do
       :domain =>         'domofera.com',
       :authentication => :plain
     }
-    ActionMailer::Base.delivery_method = :smtp
-    end
   end
+end
 end
