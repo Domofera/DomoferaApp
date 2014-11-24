@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  default from: "domofera.com"
+  default from: "domoferaapp@gmail.com"
 
   def signup_confirmation(user)
     @email    = user.email
