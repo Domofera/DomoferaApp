@@ -44,12 +44,13 @@ Rails.application.configure do
   module AuthorizeApp
     class Application < Rails::Application
       ActionMailer::Base.smtp_settings = {
-        :port =>           ENV['MANDRILL_SMTP_PORT'],
-        :address =>        ENV['MANDRILL_SMTP_SERVER'],
-        :user_name =>      ENV['MANDRILL_USERNAME'],
-        :password =>       ENV['MANDRILL_APIKEY'],
-        :domain =>         'domofera.com',
-        :authentication => :plain
+        :address   => ENV['MANDRILL_SMTP_SERVER'],
+        :port      => ENV['MANDRILL_SMTP_PORT'], # ports 587 and 2525 are also supported with STARTTLS
+        :enable_starttls_auto => true, # detects and uses STARTTLS
+        :user_name => ENV['MANDRILL_USERNAME'],
+        :password  => ENV['MANDRILL_APIKEY'], # SMTP password is any valid API key
+        :authentication => 'plain', # Mandrill supports 'plain' or 'login'
+        :domain => 'domofera.com', # your domain to identify your server when connecting
       }
     end
   end

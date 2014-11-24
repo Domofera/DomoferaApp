@@ -5,7 +5,7 @@
           <div class="row">
             <h1>Principal</h1>
             <%= link_to "Log out", log_out_path, :method => "delete" ,:class => "logout", 'data-no-turbolink' => true , :remote => false %>
-            <h2>Datos Meteorológicos para la ciudad de <p id="city-name"><%= current_user.city %></p></h2>
+            <h2>Datos Meteorológicos para la ciudad de <p id="city-name"><%= current_user %></p></h2>
             <h2 id="description"></h2>
               <div class="col-lg-3">
                     <div class="panel panel-data">
