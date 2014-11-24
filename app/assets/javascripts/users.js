@@ -22,4 +22,9 @@ $(document).ready(function () {
   var celsius = function(value) {
     return Math.round(value - 273.15);
   }
+
+  $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+  });
 });

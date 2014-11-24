@@ -15,6 +15,7 @@
 //= require jquery.easing.min.js
 //= require bootstrap.min.js
 //= require turbolinks
+//= require_tree .
 
 
 // RailsAjax
