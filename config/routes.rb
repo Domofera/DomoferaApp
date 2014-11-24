@@ -9,7 +9,8 @@ Rails.application.routes.draw do
   resources :terminals, only: [:new, :create, :edit, :update, :destroy]
   resources :sensors, only: [:new, :create, :edit, :update, :destroy]
   resources :users, only: [:new, :create, :edit, :update, :destroy]
-  resources :sessions
+  resources :sessions, only: [:create, :new, :destroy]
+  resource :user, only: [:show]
   resource :user do
     get :confirm, on: :collection
     resources :terminals, only: [:show]
