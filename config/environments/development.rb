@@ -36,6 +36,10 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
   # ActionMailer::Base.delivery_method = :smtp
   #
+
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
   module AuthorizeApp
     class Application < Rails::Application
       ActionMailer::Base.smtp_settings = {
@@ -46,7 +50,6 @@ Rails.application.configure do
         :domain =>         'domofera.com',
         :authentication => :plain
       }
-      ActionMailer::Base.delivery_method = :smtp
     end
   end
 end
