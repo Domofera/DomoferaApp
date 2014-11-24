@@ -1,6 +1,5 @@
 class UserMailer < ActionMailer::Base
   default from: "domofera.com"
-  require 'mandrill'
 
   def signup_confirmation(user)
     @email    = user.email
@@ -8,13 +7,7 @@ class UserMailer < ActionMailer::Base
     @name     = user.username
     @greeting = "Gracias por unirte a Domofera!"
 
-    #mail to: @email, subject: "Bienvenido a Domofera"
-    mandrill_mail template: 'signup_confirmation',
-      subject: 'Bienvenido a domofera',
-      to: {email: @email, name: @name},
-      important: true,
-      inline_css: true,
-      async: true
+    mail to: @email, subject: "Bienvenido a Domofera"
   end
 
   private

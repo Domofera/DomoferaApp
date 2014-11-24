@@ -80,16 +80,27 @@ config.action_mailer.perform_deliveries = true
 config.action_mailer.raise_delivery_errors = true
 config.action_mailer.delivery_method = :smtp
 config.api_key = ENV['MANDRILL_APIKEY']
+
+config.action_mailer.smtp_settings = {
+    :address   => ENV['MANDRILL_SMTP_SERVER'],
+    :port      => ENV['MANDRILL_SMTP_PORT'], # ports 587 and 2525 are also supported with STARTTLS
+    :enable_starttls_auto => true, # detects and uses STARTTLS
+    :user_name => ENV['MANDRILL_USERNAME'],
+    :password  => ENV['MANDRILL_APIKEY'], # SMTP password is any valid API key
+    :authentication => 'plain', # Mandrill supports 'plain' or 'login'
+    :domain => 'domofera.com', # your domain to identify your server when connecting
+}
+
 module AuthorizeApp
   class Application < Rails::Application
-    ActionMailer::Base.smtp_settings = {
-      :port =>           ENV['MANDRILL_SMTP_PORT'],
-      :address =>        ENV['MANDRILL_SMTP_SERVER'],
-      :user_name =>      ENV['MANDRILL_USERNAME'],
-      :password =>       ENV['MANDRILL_APIKEY'],
-      :domain =>         'domofera.com',
-      :authentication => :plain
-    }
+    # ActionMailer::Base.smtp_settings = {
+    #   :port =>           ENV['MANDRILL_SMTP_PORT'],
+    #   :address =>        ENV['MANDRILL_SMTP_SERVER'],
+    #   :user_name =>      ENV['MANDRILL_USERNAME'],
+    #   :password =>       ENV['MANDRILL_APIKEY'],
+    #   :domain =>         'domofera.com',
+    #   :authentication => :plain
+    # }
   end
 end
 end
