@@ -22,7 +22,8 @@ class UsersController < ApplicationController
 		@user = User.new user_params.merge(confirmation_token: @token)
   		if @user.save
 				mail = Mandrill::API.new ENV['MANDRILL_APIKEY']
-				mail.signup_confirmation(@user).send
+				mail.messages.send UserMailer.signup_confirmation(@user)
+
   			#UserMailer.signup_confirmation(@user).deliver
   			flash[:notice] = "¡Último paso! Mira en tu bandeja de entrada, recibirás un email con el link de activación."
   			redirect_to root_path
