@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 	before_filter :redirect_if_logged_in, only: [:index, :new, :create, :confirm]
 	skip_before_filter :authenticate, only: [:index, :new, :create, :confirm]
+	require 'mandrill'
 
 	def show
 		@current_user = current_user
@@ -20,7 +21,9 @@ class UsersController < ApplicationController
 		@token = SecureRandom.urlsafe_base64(24)
 		@user = User.new user_params.merge(confirmation_token: @token)
   		if @user.save
-  			UserMailer.signup_confirmation(@user).deliver
+				mail = Mandrill::API.new ENV['MANDRILL_APIKEY']
+				mail.signup_confirmation(@user).send
+  			#UserMailer.signup_confirmation(@user).deliver
   			flash[:notice] = "¡Último paso! Mira en tu bandeja de entrada, recibirás un email con el link de activación."
   			redirect_to root_path
   		else
