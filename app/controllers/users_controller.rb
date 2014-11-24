@@ -32,7 +32,7 @@ class UsersController < ApplicationController
 	def confirm
 	    user = User.find_by_confirmation_token(params[:confirmation_token])
 	    if user
-				user.confirm!(user)
+				user.confirm!
 	      set_session(user)
 	      token = SecureRandom.urlsafe_base64(24)
 	      redirect_to user_path

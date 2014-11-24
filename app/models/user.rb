@@ -23,8 +23,8 @@ class User < ActiveRecord::Base
     end
   end
 
-  def confirm!(user)
-    update_attributes!(confirmation_token: nil, confirmed: true, id: user.id)
+  def confirm!
+    update_attributes!(confirmation_token: nil, confirmed: true)
   end
 
   def set_session_token

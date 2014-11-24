@@ -52,7 +52,6 @@ GEM
     email_validator (1.4.0)
       activemodel
     erubis (2.7.0)
-    excon (0.41.0)
     execjs (2.2.2)
     factory_girl (4.5.0)
       activesupport (>= 3.0.0)
@@ -75,13 +74,6 @@ GEM
     kgio (2.9.2)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
-    mandrill-api (1.0.53)
-      excon (>= 0.16.0, < 1.0)
-      json (>= 1.7.7, < 2.0)
-    mandrill_mailer (0.4.13)
-      actionpack
-      activesupport
-      mandrill-api (~> 1.0.9)
     mime-types (2.4.3)
     minitest (5.4.3)
     multi_json (1.10.1)
@@ -191,8 +183,6 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   kaminari
-  mandrill-api
-  mandrill_mailer
   nickshows
   paperclip (~> 4.1)
   pg (~> 0.17.1)
