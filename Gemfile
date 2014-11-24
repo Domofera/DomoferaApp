@@ -27,6 +27,8 @@ gem "pg", "~> 0.17.1"
 gem 'rails-ajax'
 gem 'unicorn'
 
+gem 'mandrill-api'
+
 group :production do
 	gem 'rails_12factor'
 end

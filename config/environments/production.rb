@@ -78,14 +78,15 @@ Rails.application.configure do
 
   module AuthorizeApp
     class Application < Rails::Application
-      config.action_mailer.smtp_settings = {
-        :port           => ENV['MAILGUN_SMTP_PORT'],
-        :address        => ENV['MAILGUN_SMTP_SERVER'],
-        :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
-        :password       => ENV['MAILGUN_SMTP_PASSWORD'],
-        :domain         => 'domofera.com',
-        :authentication => :plain
+      ActionMailer::Base.smtp_settings = {
+      :port =>           ENV['MANDRILL_SMTP_PORT'],
+      :address =>        ENV['MANDRILL_SMTP_SERVER'],
+      :user_name =>      ENV['MANDRILL_USERNAME'],
+      :password =>       ENV['MANDRILL_APIKEY'],
+      :domain =>         'domofera.com',
+      :authentication => :plain
     }
+    ActionMailer::Base.delivery_method = :smtp
     end
   end
 end

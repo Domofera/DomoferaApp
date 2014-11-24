@@ -3,3 +3,9 @@ ENV['MAILGUN_SMTP_SERVER'] = 'smtp.mailgun.org'
 ENV['MAILGUN_SMTP_LOGIN'] = 'postmaster@domofera.herokuapp.com'
 ENV['MAILGUN_SMTP_PASSWORD'] = 'dc368ff6d2f9b85a417001c2f9639573'
 ENV['DOMOFERA_DATABASE_PASSWORD'] = "domofera2014"
+
+
+ENV['MANDRILL_SMTP_PORT'] = '587'
+ENV['MANDRILL_SMTP_SERVER'] = 'smtp.mandrillapp.com'
+ENV['MANDRILL_USERNAME'] = 'app31771576@heroku.com'
+ENV['MANDRILL_APIKEY'] = 'Tw2_2q4CNC-4_0xOzUK38g'
