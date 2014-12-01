@@ -9,7 +9,9 @@
 
 #not needed assets compiled, so ignoren public
 #it will be generated automatically
-/public
+
+#node modules ignored
+/node_modules
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
