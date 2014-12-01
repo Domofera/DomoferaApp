@@ -217,7 +217,7 @@ DEPENDENCIES
   kaminari
   nickshows
   paperclip (~> 4.1)
-  pg (~> 0.17.1)
+  pg
   pundit (~> 0.2)
   rails (= 4.1.6)
   rails-ajax
