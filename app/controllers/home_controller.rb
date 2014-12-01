@@ -3,6 +3,10 @@ class HomeController < ApplicationController
   		render "index", :layout => false
   end
 
+  def legal
+    render "legal", :layout => false
+  end
+
   def login
     if current_user
       redirect_to user_path
@@ -10,7 +14,6 @@ class HomeController < ApplicationController
       render "login", :layout => false
     end
   end
-
 
   def about
     render "about", :layout => false
