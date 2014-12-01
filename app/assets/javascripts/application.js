@@ -22,17 +22,3 @@
 //= require jquery.history
 //= require jquery.rails-ajax
 //= require RailsAjax-Config
-
-
-var ready = function(){
-  $('#hide-sidebar').click(function() {
-    $('#sidebar').slideToggle();
-  });
-
-  $('#help-button').click(function() {
-    $('#help-sidebar').toggle();
-  });
-
-};
-$(document).ready(ready);
-$(document).on('page:load', ready);
