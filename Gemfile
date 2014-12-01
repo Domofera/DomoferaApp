@@ -26,6 +26,9 @@ gem "pg", "~> 0.17.1"
 
 gem 'rails-ajax'
 gem 'unicorn'
+gem 'google-api-client', '>= 0.6.2', :require => 'google/api_client'
+gem 'signet', '>=0.4.5'
+gem 'json'
 
 group :production do
 	gem 'rails_12factor'
