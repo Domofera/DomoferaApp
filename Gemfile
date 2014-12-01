@@ -23,7 +23,6 @@ gem 'uglifier', '>= 1.3.0'
 gem "font-awesome-rails"
 gem "spring", group: :development
 
-gem 'rails-ajax'
 gem 'unicorn'
 gem 'google-api-client', '>= 0.6.2', :require => 'google/api_client'
 gem 'signet', '>=0.4.5'

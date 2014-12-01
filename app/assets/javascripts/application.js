@@ -16,9 +16,3 @@
 //= require bootstrap.min.js
 //= require turbolinks
 //= require_tree .
-
-
-// RailsAjax
-//= require jquery.history
-//= require jquery.rails-ajax
-//= require RailsAjax-Config
