@@ -1,6 +1,5 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
-$(document).ready(function () {
     var city = $('#city-name').text();
   $.get("http://api.openweathermap.org/data/2.5/weather?q="+ city +",es&lang=es", function(data){
     var description = data['weather'][0]['description'];
@@ -27,4 +26,3 @@ $(document).ready(function () {
       e.preventDefault();
       $("#wrapper").toggleClass("toggled");
   });
-});
