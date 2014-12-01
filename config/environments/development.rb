@@ -41,7 +41,6 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
   config.api_key = ENV['MANDRILL_APIKEY']
-  config.action_controller.asset_host = "http://localhost:3000"
   module AuthorizeApp
     class Application < Rails::Application
       ActionMailer::Base.smtp_settings = {

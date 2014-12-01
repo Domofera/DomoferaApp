@@ -3,12 +3,13 @@
 <head>
   <title>Domofera - About</title>
   <link rel="stylesheet" href="assets/style.css">
-<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link rel="stylesheet" href="assets/script.min.js">
 <%= csrf_meta_tags %>
 </head>
 <body>
 <div id="page-content">
   <div style="display:none" id="loader"><img src="loading.gif"/></div>
+  <img src="assets/official/logo.png" alt="Logo Domofera"/>
     <%= render :partial => "shared/flash_messages.html.erb" %>
     <h1>About Domofera</h1>
    </div>

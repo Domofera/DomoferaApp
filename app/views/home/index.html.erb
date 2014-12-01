@@ -3,7 +3,7 @@
 <head>
   <title>Domofera - Home</title>
   <link rel="stylesheet" href="assets/style.css">
-<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link rel="stylesheet" href="assets/script.min.js">
 <%= csrf_meta_tags %>
 </head>
 <body>
@@ -11,7 +11,7 @@
 <header id="top" class="header">
     <div class="text-vertical-center">
         <%= render :partial => "shared/flash_messages.html.erb" %>
-        <%= image_tag("official/logo.png", alt: "Logo Domofera") %>
+        <img src="assets/official/logo.png" alt="Logo Domofera"/>
         <h1 class="main-title">Domofera</h1>
         <h3 class="main-title">La APP de los agricultores Urbanos</h3>
         <%= link_to "Iniciar Sesión", login_path, :class => "btn btn-dark btn-lg",:remote => false %>

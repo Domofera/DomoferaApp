@@ -2,15 +2,15 @@
 <html>
 <head>
   <title>Domofera - Registro de Usuario</title>
-	<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/script.min.js">
   <%= csrf_meta_tags %>
 </head>
   <body>
     <div id="page-content">
       <header id="top" class="header">
         <div class="text-vertical-center">
-          <%= image_tag("official/logo.png", alt: "Logo Domofera") %>
+          <img src="assets/official/logo.png" alt="Logo Domofera"/>
           <h1 class="main-title">Domofera</h1>
           <h3 class="main-title">La APP de los agricultores Urbanos</h3>
             <%= render :partial => "shared/flash_messages.html.erb" %>
