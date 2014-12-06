@@ -13,3 +13,21 @@
  *= require_self
  *= require_tree .
  */
+
+h5 {
+  font-size: 1.7em;
+  font-weight: normal;
+}
+
+.main-link {
+  padding: 10px;
+  font-size: 1.3em;
+  position: absolute;
+  display: block;
+  float: right;
+  color: white;
+}
+
+.main-link:hover {
+  color: black;
+}
