@@ -7,12 +7,11 @@ Rails.application.routes.draw do
   get "sign_up" => "users#new", :as => "sign_up"
   get "legal" => "home#legal", :as => 'legal'
 
-  resources :terminals, only: [:new, :create, :edit, :update, :destroy]
   resources :sensors, only: [:new, :create, :edit, :update, :destroy]
   resources :users, only: [:new, :create]
   resources :sessions
   resource :user do
     get :confirm, on: :collection
-    resources :terminals, only: [:show]
+    resources :terminals, only: [:index, :new, :create, :edit, :update, :destroy, :show]
   end
 end
