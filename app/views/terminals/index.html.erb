@@ -1,0 +1,12 @@
+<div id="wrapper">
+  <%= render "layouts/sidebar" %>
+  <div id="page-content-wrapper">
+    <div class="container-fluid">
+      <div class="row">
+        <h1>Terminales</h1>
+        <%= link_to "Log out", log_out_path, :method => :delete ,:class => "logout" %>
+        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Cerrar Menu</a>
+      </div>
+    </div>
+  </div>
+</div>

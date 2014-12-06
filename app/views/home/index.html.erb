@@ -16,6 +16,7 @@
         <h3 class="main-title">La APP de los agricultores Urbanos</h3>
         <%= link_to "Iniciar Sesión", login_path, :class => "btn btn-dark btn-lg",:remote => false %>
         <%= link_to "Regístrate", new_user_path, :class => "btn btn-dark btn-lg",:remote => false %>
+        <h4>O accede a mediante Google Plus <%= render :partial => "shared/google_plus_login.html.erb" %></h4>
     </div>
 </header>
 <section id="about" class="about">
@@ -113,30 +114,7 @@
         </div>
     </div>
 </aside>
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-10 col-lg-offset-1 text-center">
-                <h4><strong>Domofera</strong>
-                </h4>
-                <p>Universidad de Alicante</p>
-                <ul class="list-unstyled">
-                    <li><i class="fa fa-phone fa-fw"></i> (123) 456-7890</li>
-                    <li><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:domoferaapp@gmail.com">domoferaapp@gmail.com</a>
-                    </li>
-                </ul>
-                <br>
-                <ul class="list-inline">
-                    <li>
-                        <a href="http://twitter.com/domofera"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
-                    </li>
-                </ul>
-                <hr class="small">
-                <p class="text-muted">Copyright &copy; Domofera 2014</p>
-            </div>
-        </div>
-    </div>
-  </footer>
+<%= render :partial => "shared/footer.html.erb" %>
 </div>
 </body>
 </html>

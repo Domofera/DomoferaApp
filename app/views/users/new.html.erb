@@ -27,10 +27,11 @@
       				</div>
       			<% end %>
           </div>
+          <p>Al iniciar sesión aceptas nuestra <a href="/legal">Política de Privacidad</a></p>
             <h4>¿Ya tienes cuenta? Entonces <%= link_to "inicia sesión", login_path ,:remote => false %></h4>
          </div>
        </header>
-     </footer>
    </div>
+   <%= render :partial => "shared/footer.html.erb" %>
  </body>
 </html>
