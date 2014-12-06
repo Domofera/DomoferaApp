@@ -13,6 +13,21 @@
  *= require_self
  *= require_tree .
  */
+h5 {
+  font-size: 1.7em;
+  font-weight: normal; }
+
+.main-link {
+  padding: 10px;
+  font-size: 1.3em;
+  position: absolute;
+  display: block;
+  float: right;
+  color: white; }
+
+.main-link:hover {
+  color: black; }
+
 /*!
  * Bootstrap v3.2.0 (http://getbootstrap.com)
  * Copyright 2011-2014 Twitter, Inc.
@@ -5419,6 +5434,14 @@ button.close {
   display: block;
   margin-top: 10px; }
 
+.legal-content {
+  text-align: left;
+  width: 100%;
+  padding: 30px;
+  padding-left: 100px;
+  padding-right: 100px;
+  margin-bottom: 0;
+  background-color: rgba(255, 255, 255, 0.7); }
 
 
 
