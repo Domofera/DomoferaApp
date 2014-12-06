@@ -2,9 +2,10 @@ class TerminalsController < ApplicationController
 	before_action :authenticate
 
 	def index
-		@terminal = Terminal.new
-		#refresh_dom_with_partial('aside#sidebar', '/layouts/sidebar')
-		render "index"
+	render "index", :layout => true
+	end
+	def show
+		render "show", :layout => false
 	end
 
 	def new
