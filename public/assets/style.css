@@ -5628,9 +5628,7 @@ button.close {
 /* Global Styles */
 html, body {
   width: 100%;
-  height: 100%; }
-
-body {
+  height: 100%;
   font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 .bg-primary {
@@ -5819,3 +5817,6 @@ footer {
 
 .edit-user {
   width: 100%; }
+
+body {
+  background-color: black; }
