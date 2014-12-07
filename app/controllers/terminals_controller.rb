@@ -2,8 +2,11 @@ class TerminalsController < ApplicationController
 	before_action :authenticate
 
 	def index
-	render "index", :layout => true
+		@terminal = Terminal.new
+		@terminals = @current_user.terminals
+		render "index", :layout => true
 	end
+
 	def show
 		render "show", :layout => false
 	end
@@ -13,14 +16,19 @@ class TerminalsController < ApplicationController
 	end
 
 	def create
-			@terminal = Terminal.new terminal_params.merge(:user_id => current_user.id)
-  			if @terminal.save
-					create_and_add_sensors(@terminal.id)
-  				flash[:notice] = "New terminal created succesfully!"
-  			else
-  				flash[:notice] = @terminal.errors.full_messages.to_a.join(", ")
-  		    end
-  		redirect_to user_terminal_path
+			if current_user.terminals.count < 4
+				@terminal = Terminal.new terminal_params.merge(:user_id => current_user.id)
+	  			if @terminal.save
+						create_and_add_sensors(@terminal.id)
+	  				flash[:notice] = "Nuevo terminal creado"
+	  			else
+	  				flash[:notice] = @terminal.errors.full_messages.to_a.join(", ")
+	  		    end
+	  		redirect_to user_terminals_path
+			else
+				flash[:notice] = "Ya tienes 4 terminales, no puedes crear más"
+				redirect_to user_terminals_path
+			end
 	end
 
 	def edit
@@ -30,9 +38,9 @@ class TerminalsController < ApplicationController
 	def update
 		@terminal = current_user.terminals.find(params[:id])
       if @terminal.update_attributes terminal_params
-      	 flash[:notice] = "Terminal updated successfully!."
+      	 flash[:notice] = "Terminal actualizado"
       else
-      	 flash[:notice] = "Terminal could not be updated."
+      	 flash[:notice] = "El terminal no puede ser actualizado"
       end
       redirect_to user_terminal_path
 	end
@@ -40,9 +48,9 @@ class TerminalsController < ApplicationController
 	def destroy
 		@terminal = current_user.terminals.find(params[:id])
 		if @terminal.destroy
-			 flash[:notice] = "Terminal removed successfully!."
+			 flash[:notice] = "Terminal eliminado"
 		else
-			flash[:notice] = "Terminal could not be removed."
+			flash[:notice] = "El terminal no puede ser eliminado"
 		end
 		redirect_to user_terminal_path
 	end
@@ -53,11 +61,11 @@ class TerminalsController < ApplicationController
 	end
 
 	def create_and_add_sensors id
-		Sensor.new(:terminal_id => id, :type => 'humidity')
-		Sensor.new(:terminal_id => id, :type => 'humidityGround')
-		Sensor.new(:terminal_id => id, :type => 'temperature')
-		Sensor.new(:terminal_id => id, :type => 'ph')
-		Sensor.new(:terminal_id => id, :type => 'light')
-		Sensor.new(:terminal_id => id, :type => 'wind')
+		Sensor.new(:terminal_id => id, :name => 'Humedad', :value => '0').save
+		Sensor.new(:terminal_id => id, :name => 'Humedad-Suelo', :value => '0').save
+		Sensor.new(:terminal_id => id, :name => 'Temperatura', :value => '0').save
+		Sensor.new(:terminal_id => id, :name => 'pH', :value => '0').save
+		Sensor.new(:terminal_id => id, :name => 'Luz', :value => '0').save
+		Sensor.new(:terminal_id => id, :name => 'Viento', :value => '0').save
 	end
 end
