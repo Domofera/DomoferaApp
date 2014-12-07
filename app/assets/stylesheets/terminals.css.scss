@@ -1,3 +1,31 @@
 // Place all the styles related to the terminals controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.alert {
+  opacity: 0.9;
+  width: 300px;
+  margin: 0 auto 0 auto;
+  position: absolute;
+  background-color: #0CB6B6;
+  color: white;
+  display: block;
+  z-index: 1010;
+  right: 0;
+}
+
+#logout {
+  float: right;
+}
+
+#menu-toggle > i{
+  width: 30px;
+  height: 30px;
+}
+
+#new-terminal-form {
+  display: none;
+}
+
+.panel-body.terminals {
+  text-align: left;
+}

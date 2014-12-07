@@ -2,3 +2,20 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 /* Toggle Styles */
+
+#menu-toggle {
+  color: #0CB6B6;
+}
+
+#menu-toggle:hover {
+  cursor: pointer;
+}
+
+.logout {
+  float: right;
+}
+
+
+.edit-user {
+  width: 100%;
+}

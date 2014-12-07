@@ -1,4 +1,4 @@
-$("#menu-toggle").click(function(e) {
+$("#new").click(function(e) {
     e.preventDefault();
     $("#wrapper").toggleClass("toggled");
 });
