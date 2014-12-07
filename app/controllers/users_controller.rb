@@ -16,6 +16,11 @@ class UsersController < ApplicationController
   	render "new", :layout => false
 	end
 
+	def edit
+		@current_user = current_user
+		render "edit"
+	end
+
 	def create
 		@token = SecureRandom.urlsafe_base64(24)
 		@user = User.new user_params.merge(confirmation_token: @token)
@@ -48,7 +53,7 @@ class UsersController < ApplicationController
 			else
 				flash[:notice] = "Sus datos no han podido ser actualizados."
 			end
-			redirect_to user_path
+			redirect_to edit_user_path
 	end
 
 	def destroy
