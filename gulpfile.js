@@ -4,7 +4,7 @@
 var destinationPath = 'app/';
 var assetsPath = 'assets'
 var styleRootPath = 'app/' + assetsPath + '/stylesheets'
-var styleDestPath = destinationPath + assetsPath + '/stylesheets';
+var styleDestPath = destinationPath + assetsPath + '/stylesheets/compiled';
 var scriptPath = 'app/' + assetsPath + '/javascripts';
 var viewPath = 'views'
 
@@ -32,10 +32,10 @@ gulp.task('style', function() {
 gulp.task('scripts', function() {
   return gulp.src(scriptPath + scriptExtension)
   .pipe(concat('script.js'))
-  .pipe(gulp.dest(destinationPath + assetsPath + '/javascripts'))
+  .pipe(gulp.dest(destinationPath + assetsPath + '/javascripts/compiled'))
   .pipe(rename('script.min.js'))
   .pipe(uglify())
-  .pipe(gulp.dest(destinationPath + assetsPath + '/javascripts'));
+  .pipe(gulp.dest(destinationPath + assetsPath + '/javascripts/compiled'));
 });
 
 /************* Others *************/
