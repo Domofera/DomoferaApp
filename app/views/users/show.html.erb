@@ -4,13 +4,13 @@
       <div class="container-fluid">
           <div class="row">
             <h1>Principal</h1>
-            <%= link_to "Log out", log_out_path, :method => :delete ,:class => "logout" %>
-            <h2>Datos Meteorológicos para la ciudad de <p id="city-name"><%= current_user.city %></p></h2>
-            <h2 id="description"></h2>
+            <h2>Datos Meteorológicos para la ciudad de <span id="city-name"><%= current_user.city %></span>:
+              <span id="description"></span>
+            </h2>
               <div class="col-lg-3">
                     <div class="panel panel-data">
                         <div class="panel-heading">
-                          <div><img id="icon"/></div>
+                          <i id="icon"></i>
                           Temperatura</div>
                         <div class="panel-body">
                           <h2 id="temperature"></h2>
@@ -20,8 +20,8 @@
               <div class="col-lg-3">
                     <div class="panel panel-data centered">
                         <div class="panel-heading">
-                          <div class="icon flaticon-drop4"></div>
-                          Humedad</div>
+                          <i class="icon flaticon-water3"></i>Humedad
+                        </div>
                       <div class="panel-body">
                         <h2 id="humidity"></h2>
                       </div>
@@ -30,7 +30,7 @@
               <div class="col-lg-3">
                     <div class="panel panel-data">
                       <div class="panel-heading">
-                        <div class="icon flaticon-barometer"></div>
+                        <i class="icon flaticon-barometer"></i>
                         Presión Atmosférica</div>
                       <div class="panel-body">
                         <h2 id="pressure"></h2>
@@ -40,7 +40,7 @@
               <div class="col-lg-3">
                     <div class="panel panel-data">
                       <div class="panel-heading">
-                        <div class="icon flaticon-winds2"></div>
+                        <i class="icon flaticon-winds2"></i>
                         Viento</div>
                       <div class="panel-body">
                         <h2 id="wind"></h2>
@@ -48,7 +48,7 @@
                     </div>
               </div>
           </div>
-          <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Cerrar Menu</a>
+          <i class="icon flaticon-right226" id="menu-toggle"></i>
       </div>
   </div>
 </div>

@@ -2,11 +2,38 @@
   <%= render "layouts/sidebar" %>
   <div id="page-content-wrapper">
     <div class="container-fluid">
-      <div class="row">
-        <h1>Terminales</h1>
-        <%= link_to "Log out", log_out_path, :method => :delete ,:class => "logout" %>
-        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Cerrar Menu</a>
+      <p class="btn btn-dark btn-lg" id="new-terminal">Nuevo Terminal</p>
+      <div class="row" id="new-terminal-form">
+        <%= render "form_new_terminal" %>
       </div>
+      <h1>Terminales</h1>
+
+      <div class="row">
+        <% @terminals.each_with_index do |terminal, index| %>
+          <div class="col-lg-6">
+            <div class="panel panel-data centered">
+              <div class="panel-heading">
+                <i class="icon flaticon-wifi20"></i>
+                <%= terminal.name %>
+                <button type="button" class="close">
+                  <span aria-hidden="true">x</span>
+                </button>
+              </div>
+              <div class="panel-body terminals">
+                <h4>Descripción: <%= terminal.description %></h4>
+                <h4>Código: <%= terminal.password %></h4>
+                <h4>Sensores:</h4>
+                <% terminal.sensors.each do |sensor| %>
+                <ul>
+                  <h4><li><%= sensor.name %>: <%= sensor.value %></li></h4>
+                </ul>
+                <% end %>
+              </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+        <i class="icon flaticon-right226" id="menu-toggle"></i>
     </div>
   </div>
 </div>
