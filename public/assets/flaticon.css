@@ -1,0 +1,97 @@
+@font-face {
+	font-family: "Flaticon";
+	src: url("flaticon.eot");
+	src: url("flaticon.eot#iefix") format("embedded-opentype"),
+	url("flaticon.woff") format("woff"),
+	url("flaticon.ttf") format("truetype"),
+	url("flaticon.svg") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+	font-family: Flaticon;
+        font-size: 20px;
+font-style: normal;
+margin-left: 20px;
+}.flaticon-barometer:before {
+	content: "\e000";
+}
+.flaticon-basic14:before {
+	content: "\e001";
+}
+.flaticon-cloud310:before {
+	content: "\e002";
+}
+.flaticon-clouds:before {
+	content: "\e003";
+}
+.flaticon-clouds11:before {
+	content: "\e004";
+}
+.flaticon-cloudy19:before {
+	content: "\e005";
+}
+.flaticon-crescent32:before {
+	content: "\e006";
+}
+.flaticon-delete85:before {
+	content: "\e007";
+}
+.flaticon-door13:before {
+	content: "\e008";
+}
+.flaticon-electrical16:before {
+	content: "\e009";
+}
+.flaticon-fast44:before {
+	content: "\e00a";
+}
+.flaticon-flowers12:before {
+	content: "\e00b";
+}
+.flaticon-incoming4:before {
+	content: "\e00c";
+}
+.flaticon-machine2:before {
+	content: "\e00d";
+}
+.flaticon-outcoming1:before {
+	content: "\e00e";
+}
+.flaticon-plant15:before {
+	content: "\e00f";
+}
+.flaticon-profile26:before {
+	content: "\e010";
+}
+.flaticon-rain4:before {
+	content: "\e011";
+}
+.flaticon-right226:before {
+	content: "\e012";
+}
+.flaticon-sea1:before {
+	content: "\e013";
+}
+.flaticon-simple33:before {
+	content: "\e014";
+}
+.flaticon-snowing9:before {
+	content: "\e015";
+}
+.flaticon-sun79:before {
+	content: "\e016";
+}
+.flaticon-sun8:before {
+	content: "\e017";
+}
+.flaticon-water3:before {
+	content: "\e018";
+}
+.flaticon-wifi20:before {
+	content: "\e019";
+}
+.flaticon-winds2:before {
+	content: "\e01a";
+}
