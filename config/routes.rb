@@ -8,10 +8,11 @@ Rails.application.routes.draw do
   get "legal" => "home#legal", :as => 'legal'
 
   resources :sensors, only: [:new, :create, :edit, :update, :destroy]
+  resources :terminals, only: [:new, :create, :edit, :update, :destroy]
   resources :users, only: [:new, :create]
   resources :sessions
   resource :user do
     get :confirm, on: :collection
-    resources :terminals, only: [:index, :new, :create, :edit, :update, :destroy, :show]
+    resources :terminals, only: [:index, :show]
   end
 end
