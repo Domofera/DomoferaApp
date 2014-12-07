@@ -21,6 +21,11 @@ module Domoferaapp
         ENV[key.to_s] = value
           end if File.exists?(env_file)
     end
+
+    config.action_dispatch.default_headers.merge!({
+      "Access-Controll-Allow-Origin" => "http://localhost/3000",
+      "Access-Controll-Allow-Origin" => "http://api.openweathermap.org/data/2.5/weather"
+      })
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
