@@ -11,6 +11,6 @@ class Terminal < ActiveRecord::Base
            format: { with: /\A[a-zA-Z0-9' ']*\z/ }
 
 	validates :description,
-					 length: { maximum: 40 },
+					 length: { maximum: 60 },
 					 format: { with: /\A[a-zA-Z0-9' ']*\z/ }
 end
