@@ -1,6 +1,6 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
-$( document ).ready(function() {
+var ready = function() {
 var icons = {
   //day
   '01d': 'flaticon-sun79',
@@ -78,4 +78,8 @@ $.ajax({
     e.preventDefault();
     $("#new-terminal-form").toggle("slow");
   });
-});
+
+};
+
+$(document).ready(ready);
+$(document).on('page:load', ready);
