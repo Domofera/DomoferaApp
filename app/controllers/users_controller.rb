@@ -8,6 +8,7 @@ class UsersController < ApplicationController
 	end
 
 	def statistics
+		@current_user = current_user
 		render "statistics"
 	end
 
