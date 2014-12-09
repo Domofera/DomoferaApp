@@ -38,6 +38,13 @@ gulp.task('scripts', function() {
   .pipe(gulp.dest(destinationPath + assetsPath + '/javascripts/compiled'));
 });
 
+gulp.task('chartScripts', function() {
+  return gulp.src('app/assets/javascripts/statistics/*.js')
+  .pipe(concat('statistics.js'))
+  .pipe(uglify())
+  .pipe(gulp.dest('app/assets/javascripts/compiled'));
+})
+
 /************* Others *************/
 gulp.task('lint', function() {
   return gulp.src(scriptPath + scriptExtension)
@@ -47,7 +54,8 @@ gulp.task('lint', function() {
 
 gulp.task('watch', function() {
   gulp.watch(scriptPath + scriptExtension, ['lint', 'scripts']);
+  gulp.watch('app/assets/javascripts/statistics/*.js', ['chartScripts']);
   gulp.watch(styleRootPath + styleRootExtension, ['style']);
 });
 
-gulp.task('default', ['lint', 'style', 'scripts','watch']);
+gulp.task('default', ['lint', 'style', 'scripts', 'chartScripts','watch']);
