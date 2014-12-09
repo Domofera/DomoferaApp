@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :sessions
   resource :user do
     get :confirm, on: :collection
+    get :statistics, on: :collection
     resources :terminals, only: [:index, :show]
   end
 end
