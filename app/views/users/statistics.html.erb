@@ -1,0 +1,26 @@
+<div id="wrapper">
+  <%= render "layouts/sidebar" %>
+  <div id="page-content-wrapper">
+    <div class="container-fluid">
+      <div class="row">
+        <h1>Estadísticas</h1>
+        Selecciona:
+          <select class="selectpicker">
+            <option>Humedad</option>
+            <option>Humedad del Suelo</option>
+            <option>Temperatura</option>
+            <option>Viento</option>
+            <option>pH</option>
+          </select>
+          <div class="canvasContainer">
+            <canvas id="canvasHumidity" class="canvas"></canvas>
+          </div>
+          <div class="canvasContainer">
+            <canvas id="canvasWind" class="canvas"></canvas>
+          </div>
+        </div>
+            <i class="icon flaticon-right226" id="menu-toggle"></i>
+    </div>
+  </div>
+</div>
+<%= javascript_include_tag "compiled/statistics", "data-turbolinks-track" => true %>
