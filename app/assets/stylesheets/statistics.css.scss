@@ -6,9 +6,50 @@
 }
 
 .canvasContainer {
-  width: 90%;
+  width: 80%;
   margin: 0 auto 0 auto;
   position: relative;
   display: block;
   padding-bottom: 50px;
+}
+
+#btn-group {
+  display: block;
+  text-align: center;
+}
+
+.statisticButton {
+  border: none;
+  border-radius: 0;
+  margin: 5px;
+  min-width: 200px;
+  height: 50px;
+}
+
+.all {
+  border: 1px solid silver;
+}
+
+.humidity {
+  background-color: #81CFE0;
+}
+
+.wind {
+  background-color: #E6B8E6;
+}
+
+.floor {
+  background-color: #D65C33;
+}
+
+.temp {
+  background-color: #FF9933;
+}
+
+.ph {
+  background-color: #00FF99;
+}
+
+.light {
+  background-color: #FFFF99;
 }

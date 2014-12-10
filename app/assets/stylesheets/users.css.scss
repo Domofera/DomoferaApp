@@ -13,8 +13,18 @@
 
 .logout {
   float: right;
+  margin: 5px;
+  padding: 10px;
+  font-size: 1.2em;
+  background-color: #333;
+  opacity: 0.8;
+  color: white;
 }
 
+.navigator {
+  display: inline-block;
+  width: 100%;
+}
 
 .edit-user {
   width: 100%;

@@ -5442,43 +5442,55 @@ button.close {
 .flaticon-winds2:before {
   content: "\e01a"; }
 
-.form-signin {
-  max-width: 330px;
-  min-width: 300px;
-  padding: 30px;
-  margin: 0 auto; }
+.main-form {
+  display: block;
+  width: 100%;
+  padding: 30px; }
 
-.form-for-signin {
-  color: blue; }
+.simple-form {
+  display: block; }
 
-.form-signin .form-signin-heading, .form-signin .checkbox {
-  margin-bottom: 10px; }
-
-.form-signin .checkbox {
-  font-weight: normal; }
-
-.form-signin .form-control {
+.simple-input {
+  color: #333;
+  width: 90%;
+  font-size: 1.5em;
+  margin: 5px auto 5px auto;
+  display: block;
   position: relative;
-  font-size: 16px;
-  height: auto;
-  padding: 10px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box; }
+  border: 3px solid #70DBDB;
+  padding: 8px; }
 
-.form-signin .form-control:focus {
-  z-index: 2; }
+.simple-input:focus {
+  background-color: #70DBDB;
+  color: white; }
 
-.form-signin button {
-  margin-top: 10px; }
+.simple-input:focus::-webkit-input-placeholder {
+  /* WebKit browsers */
+  color: white; }
 
-.account-wall {
-  margin-top: 20px;
-  padding: 40px 0px 20px 0px;
-  background-color: #f7f7f7;
-  -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3); }
+.simple-input:focus:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: white;
+  opacity: 1; }
+
+.simple-input:focus::-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: white;
+  opacity: 1; }
+
+.simple-input:focus::-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  color: white; }
+
+.simple-submit {
+  font-size: 1.5em;
+  display: block;
+  background-color: #0Cb6b6;
+  border: none;
+  padding: 8px;
+  margin: 5px auto 5px auto;
+  margin-top: 5px;
+  color: white; }
 
 .login-title {
   color: #555;
@@ -5501,134 +5513,6 @@ button.close {
 .new-account {
   display: block;
   margin-top: 10px; }
-
-.legal-content {
-  text-align: left;
-  width: 80%;
-  padding: 30px;
-  margin: 0 auto 0 auto;
-  background-color: white; }
-
-
-
-/*!
- * Start Bootstrap - Simple Sidebar HTML Template (http://startbootstrap.com)
- * Code licensed under the Apache License v2.0.
- * For details, see http://www.apache.org/licenses/LICENSE-2.0.
- */
-#wrapper {
-  padding-left: 0;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease; }
-
-#wrapper.toggled {
-  padding-left: 250px; }
-
-#sidebar-wrapper {
-  z-index: 1000;
-  position: fixed;
-  left: 250px;
-  width: 0;
-  height: 100%;
-  margin-left: -250px;
-  overflow-y: auto;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-  background-color: #0CB6B6;
-  background: url(../sidebarBg.png) no-repeat center center scroll;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover; }
-
-#wrapper.toggled #sidebar-wrapper {
-  width: 250px; }
-
-#page-content-wrapper {
-  width: 100%;
-  padding: 15px; }
-
-#wrapper.toggled #page-content-wrapper {
-  position: absolute;
-  margin-right: -250px; }
-
-/* Sidebar Styles */
-.sidebar-nav {
-  position: absolute;
-  top: 0;
-  width: 250px;
-  margin: 0;
-  padding: 0;
-  list-style: none; }
-
-.sidebar-nav li {
-  text-indent: 30px;
-  line-height: 40px;
-  font-size: 24px;
-  margin-top: 10px; }
-
-.sidebar-nav li a {
-  display: block;
-  text-decoration: none;
-  color: white; }
-
-.sidebar-nav li a:hover {
-  text-decoration: none;
-  color: black;
-  background: rgba(255, 255, 255, 0.2); }
-
-.sidebar-nav li a:active, .sidebar-nav li a:focus {
-  text-decoration: none; }
-
-.sidebar-nav > .sidebar-brand {
-  height: 65px;
-  font-size: 28px;
-  line-height: 60px; }
-
-.sidebar-nav > .sidebar-brand a {
-  color: white; }
-
-.sidebar-nav > .sidebar-brand a:hover {
-  color: #fff;
-  background: none; }
-
-@media (min-width: 768px) {
-  #wrapper {
-    padding-left: 250px; }
-
-  #wrapper.toggled {
-    padding-left: 0; }
-
-  #sidebar-wrapper {
-    width: 250px; }
-
-  #wrapper.toggled #sidebar-wrapper {
-    width: 0; }
-
-  #page-content-wrapper {
-    padding: 20px; }
-
-  #wrapper.toggled #page-content-wrapper {
-    position: relative;
-    margin-right: 0; }
- }
-
-.canvas {
-  height: 225px;
-  width: 100%;
-  position: relative;
-  display: block; }
-
-.canvasContainer {
-  width: 90%;
-  margin: 0 auto 0 auto;
-  position: relative;
-  display: block;
-  padding-bottom: 50px; }
 
 /*!
  * Start Bootstrap - Stylish Portfolio Bootstrap Theme (http://startbootstrap.com)
@@ -5787,12 +5671,175 @@ i {
   margin: 0 auto 0 auto;
   background-color: white; }
 
+.center {
+  margin: 0 auto 0 auto; }
+
 /* Footer */
 footer {
   padding: 100px 0; }
 
 a {
   color: #CC5200; }
+
+.legal-content {
+  text-align: left;
+  width: 80%;
+  padding: 30px;
+  margin: 0 auto 0 auto;
+  background-color: white; }
+
+
+
+/*!
+ * Start Bootstrap - Simple Sidebar HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+#wrapper {
+  padding-left: 0;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease; }
+
+#wrapper.toggled {
+  padding-left: 250px; }
+
+#sidebar-wrapper {
+  z-index: 1000;
+  position: fixed;
+  left: 250px;
+  width: 0;
+  height: 100%;
+  margin-left: -250px;
+  overflow-y: auto;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  background-color: #0CB6B6;
+  background: url(../sidebarBg.png) no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover; }
+
+#wrapper.toggled #sidebar-wrapper {
+  width: 250px; }
+
+#page-content-wrapper {
+  width: 100%;
+  padding: 15px; }
+
+#wrapper.toggled #page-content-wrapper {
+  position: absolute;
+  margin-right: -250px; }
+
+/* Sidebar Styles */
+.sidebar-nav {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+.sidebar-nav li {
+  text-indent: 30px;
+  line-height: 40px;
+  font-size: 24px;
+  margin-top: 10px; }
+
+.sidebar-nav li a {
+  display: block;
+  text-decoration: none;
+  color: white; }
+
+.sidebar-nav li a:hover {
+  text-decoration: none;
+  color: black;
+  background: rgba(255, 255, 255, 0.2); }
+
+.sidebar-nav li a:active, .sidebar-nav li a:focus {
+  text-decoration: none; }
+
+.sidebar-nav > .sidebar-brand {
+  height: 65px;
+  font-size: 28px;
+  line-height: 60px; }
+
+.sidebar-nav > .sidebar-brand a {
+  color: white; }
+
+.sidebar-nav > .sidebar-brand a:hover {
+  color: #fff;
+  background: none; }
+
+@media (min-width: 768px) {
+  #wrapper {
+    padding-left: 250px; }
+
+  #wrapper.toggled {
+    padding-left: 0; }
+
+  #sidebar-wrapper {
+    width: 250px; }
+
+  #wrapper.toggled #sidebar-wrapper {
+    width: 0; }
+
+  #page-content-wrapper {
+    padding: 20px; }
+
+  #wrapper.toggled #page-content-wrapper {
+    position: relative;
+    margin-right: 0; }
+ }
+
+.canvas {
+  height: 225px;
+  width: 100%;
+  position: relative;
+  display: block; }
+
+.canvasContainer {
+  width: 80%;
+  margin: 0 auto 0 auto;
+  position: relative;
+  display: block;
+  padding-bottom: 50px; }
+
+#btn-group {
+  display: block;
+  text-align: center; }
+
+.statisticButton {
+  border: none;
+  border-radius: 0;
+  margin: 5px;
+  min-width: 200px;
+  height: 50px; }
+
+.all {
+  border: 1px solid silver; }
+
+.humidity {
+  background-color: #81CFE0; }
+
+.wind {
+  background-color: #E6B8E6; }
+
+.floor {
+  background-color: #D65C33; }
+
+.temp {
+  background-color: #FF9933; }
+
+.ph {
+  background-color: #00FF99; }
+
+.light {
+  background-color: #FFFF99; }
 
 .alert {
   opacity: 0.9;
@@ -5826,7 +5873,17 @@ a {
   cursor: pointer; }
 
 .logout {
-  float: right; }
+  float: right;
+  margin: 5px;
+  padding: 10px;
+  font-size: 1.2em;
+  background-color: #333;
+  opacity: 0.8;
+  color: white; }
+
+.navigator {
+  display: inline-block;
+  width: 100%; }
 
 .edit-user {
   width: 100%; }
