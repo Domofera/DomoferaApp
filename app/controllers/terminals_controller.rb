@@ -22,7 +22,7 @@ class TerminalsController < ApplicationController
 						create_and_add_sensors(@terminal.id)
 	  				flash[:notice] = "Nuevo terminal creado"
 	  			else
-	  				flash[:notice] = @terminal.errors.full_messages.to_a.join(", ")
+	  				flash[:notice] = @terminal.errors.full_messages.to_a.join(', ');
 	  		    end
 	  		redirect_to user_terminals_path
 			else
