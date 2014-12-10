@@ -7,10 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body class="<%= controller_name %> <%= action_name %>" id="page-body">
-<%= render "shared/flash_messages" %>
-<div class="top-menu">
-<div id="page-content">
-  <%= yield %>
-</div>
+  <%= render "shared/flash_messages" %>
+  <div class="top-menu">
+    <div id="page-content">
+      <div id="wrapper">
+        <%= render "layouts/sidebar" %>
+        <%= yield %>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

@@ -11,23 +11,26 @@
       <header id="top" class="header">
         <a class="main-link" href="/">Principal</a>
         <div class="text-vertical-center">
+          <!-- Logo y texto de cabecera -->
           <img src="../assets/official/logo.png" alt="Logo Domofera"/>
           <h1 class="main-title">Domofera</h1>
           <h3 class="main-title">La APP de los agricultores Urbanos</h3>
             <%= render :partial => "shared/flash_messages.html.erb" %>
-            <div class="form-signin">
-            <%= form_for @user, inline_errors: false, :class => 'form-signin', :remote => false do |f| %>
-				        <div class="login-wrap">
-					        <%= f.text_field :username, :class => 'form-control', :placeholder => 'Nombre de usuario' %>
-					        <%= f.text_field :email, :class => 'form-control', :placeholder => 'Email'  %>
-                  <%= f.text_field :city, :class => 'form-control', :placeholder => 'Ciudad'  %>
-                  <%= f.text_field :country, :class => 'form-control', :placeholder => 'País'  %>
-        					<%= f.password_field :password, :class => 'form-control', :placeholder => 'Contraseña'   %>
-        					<%= f.password_field :password_confirmation, :class => 'form-control', :placeholder => 'Repetir contraseña'   %>
-      					  <%= f.submit "Enviar datos", :class => 'btn btn-lg btn-block', :placeholder => 'Nombre de usuario'  %>
-      				</div>
-      			<% end %>
-          </div>
+            <!--  Formulario de registro de usuario -->
+            <div class="row">
+              <div class="col-md-4 col-md-offset-4">
+                <%= form_for @user, inline_errors: false, :class => 'simple-form', :remote => false do |f| %>
+    					        <%= f.text_field :username, :class => 'simple-input', :placeholder => 'Nombre de usuario' %>
+    					        <%= f.text_field :email, :class => 'simple-input', :placeholder => 'Email'  %>
+                      <%= f.text_field :city, :class => 'simple-input', :placeholder => 'Ciudad'  %>
+                      <%= f.text_field :country, :class => 'simple-input', :placeholder => 'País'  %>
+            					<%= f.password_field :password, :class => 'simple-input', :placeholder => 'Contraseña'   %>
+            					<%= f.password_field :password_confirmation, :class => 'simple-input', :placeholder => 'Repetir contraseña'   %>
+          					  <%= f.submit "Enviar datos", :class => 'simple-submit', :placeholder => 'Nombre de usuario'  %>
+          			<% end %>
+              </div>
+            </div>
+          <!--  Aviso Legal -->
           <p>Al iniciar sesión aceptas nuestra <a href="/legal">Política de Privacidad</a></p>
             <h4>¿Ya tienes cuenta? Entonces <%= link_to "inicia sesión", login_path ,:remote => false %></h4>
          </div>

@@ -1,54 +1,57 @@
-<div id="wrapper">
-  <%= render "layouts/sidebar" %>
-  <div id="page-content-wrapper">
-      <div class="container-fluid">
-          <div class="row">
-            <h1>Principal</h1>
-            <h2>Datos Meteorológicos para la ciudad de <span id="city-name"><%= current_user.city %></span>:
-              <span id="description"></span>
-            </h2>
-              <div class="col-lg-3">
-                    <div class="panel panel-data">
-                        <div class="panel-heading">
-                          <i id="icon"></i>
-                          Temperatura</div>
-                        <div class="panel-body">
-                          <h2 id="temperature"></h2>
-                        </div>
-                    </div>
-              </div>
-              <div class="col-lg-3">
-                    <div class="panel panel-data centered">
-                        <div class="panel-heading">
-                          <i class="icon flaticon-water3"></i>Humedad
-                        </div>
-                      <div class="panel-body">
-                        <h2 id="humidity"></h2>
-                      </div>
-                    </div>
-              </div>
-              <div class="col-lg-3">
-                    <div class="panel panel-data">
-                      <div class="panel-heading">
-                        <i class="icon flaticon-barometer"></i>
-                        Presión Atmosférica</div>
-                      <div class="panel-body">
-                        <h2 id="pressure"></h2>
-                      </div>
-                    </div>
-              </div>
-              <div class="col-lg-3">
-                    <div class="panel panel-data">
-                      <div class="panel-heading">
-                        <i class="icon flaticon-winds2"></i>
-                        Viento</div>
-                      <div class="panel-body">
-                        <h2 id="wind"></h2>
-                      </div>
-                    </div>
-              </div>
+<div id="page-content-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <h1>Principal</h1>
+      <h2>Datos Meteorológicos para la ciudad de
+        <span id="city-name"><%= current_user.city %></span>:
+        <span id="description"></span>
+      </h2>
+      <!--  Panel de temperatura -->
+      <div class="col-lg-3">
+        <div class="panel panel-data">
+          <div class="panel-heading">
+            <i id="icon"></i><p>Temperatura</p>
           </div>
-          <i class="icon flaticon-right226" id="menu-toggle"></i>
+          <div class="panel-body">
+            <h2 id="temperature"></h2>
+          </div>
+        </div>
       </div>
-  </div>
+      <!--  Panel de Humedad -->
+      <div class="col-lg-3">
+        <div class="panel panel-data centered">
+          <div class="panel-heading">
+            <i class="icon flaticon-water3"></i><p>Humedad</p>
+          </div>
+          <div class="panel-body">
+            <h2 id="humidity"></h2>
+          </div>
+        </div>
+      </div>
+      <!-- Panel de Presión Atmosférica -->
+      <div class="col-lg-3">
+        <div class="panel panel-data">
+          <div class="panel-heading">
+            <i class="icon flaticon-barometer"></i><p>Presión Atmosférica</p>
+          </div>
+          <div class="panel-body">
+            <h2 id="pressure"></h2>
+          </div>
+        </div>
+      </div>
+      <!-- Panel de Viento -->
+      <div class="col-lg-3">
+        <div class="panel panel-data">
+          <div class="panel-heading">
+            <i class="icon flaticon-winds2"></i><p>Viento</p>
+          </div>
+          <div class="panel-body">
+            <h2 id="wind"></h2>
+          </div>
+        </div>
+      </div>
+
+    </div>
+      <i class="icon flaticon-right226" id="menu-toggle"></i>
+    </div>
 </div>

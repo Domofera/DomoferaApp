@@ -1,12 +1,8 @@
 <div class="col-md-4">
-  <div class="form-signin">
-    <%= form_for @terminal, inline_errors: false, :class => 'form-signin' do |f| %>
-    <div class="login-wrap">
-      <%= f.text_field :name, :class => 'form-control', :placeholder => 'Nombre del Terminal' %>
-      <%= f.text_field :description, :class => 'form-control', :placeholder => 'Descripción'  %>
-      <%= f.password_field :password, :class => 'form-control', :placeholder => 'Código'   %>
-      <%= f.submit "Crear terminal", :class => 'btn btn-lg btn-block' %>
-    </div>
+    <%= form_for @terminal, inline_errors: false, :class => 'simple-form' do |f| %>
+      <%= f.text_field :name, :class => 'simple-input', :placeholder => 'Nombre del Terminal' %>
+      <%= f.text_field :description, :class => 'simple-input', :placeholder => 'Descripción'  %>
+      <%= f.password_field :password, :class => 'simple-input', :placeholder => 'Código'   %>
+      <%= f.submit "Crear terminal", :class => 'simple-submit' %>
     <% end %>
-  </div>
 </div>

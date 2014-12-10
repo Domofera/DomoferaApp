@@ -108,7 +108,7 @@
         <div class="row">
             <div class="col-lg-12 text-center">
                 <h3>No esperes más y conviértete en agricultor urbano.</h3>
-                <a href="#" class="btn btn-lg btn-light">Iniciar Sesión</a>
+                <%= link_to "Iniciar Sesión", login_path, :class => "btn btn-light btn-lg",:remote => false %>
                 <%= link_to "Regístrate", new_user_path, :class => "btn btn-dark btn-lg",:remote => false %>
             </div>
         </div>

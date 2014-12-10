@@ -1,26 +1,42 @@
-<div id="wrapper">
-  <%= render "layouts/sidebar" %>
-  <div id="page-content-wrapper">
-    <div class="container-fluid">
-      <div class="row">
-        <h1>Estadísticas</h1>
-        Selecciona:
-          <select class="selectpicker">
-            <option>Humedad</option>
-            <option>Humedad del Suelo</option>
-            <option>Temperatura</option>
-            <option>Viento</option>
-            <option>pH</option>
-          </select>
-          <div class="canvasContainer">
-            <canvas id="canvasHumidity" class="canvas"></canvas>
+<div id="page-content-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <h1>Estadísticas</h1>
+          <h4>Selecciona:</h4>
+          <!--  Botones de estadisticas -->
+          <div id="btn-group" class="col-md-12">
+            <button class="statisticButton humidity btn btn-default" id="humidityStat">Humedad</button>
+            <button class="statisticButton floor btn btn-default"    id="floorStat">Humedad del Suelo</button>
+            <button class="statisticButton temp btn btn-default"     id="tempStat">Temperatura</button>
+            <button class="statisticButton wind btn btn-default"     id="windStat">Viento</button>
+            <button class="statisticButton ph btn btn-default"       id="phStat">pH</button>
+            <button class="statisticButton all btn btn-default" id="allStat">Todos</button>
           </div>
-          <div class="canvasContainer">
-            <canvas id="canvasWind" class="canvas"></canvas>
+          <div class="col-md-12">
+        <!--  Panel de Estadisticas - Slider -->
+        <section id="statistics-slider">
+          <div class="canvasContainer" id="humidityStatContainer">
+            <h4>Humedad</h4><canvas id="canvasHumidity" class="canvas"></canvas>
           </div>
-        </div>
-            <i class="icon flaticon-right226" id="menu-toggle"></i>
-    </div>
+          <div class="canvasContainer" id="windStatContainer">
+            <h4>Viento</h4><canvas id="canvasWind" class="canvas"></canvas>
+          </div>
+          <div class="canvasContainer" id="floorStatContainer">
+            <h4>Humedad del Suelo</h4><canvas id="canvasFloor" class="canvas"></canvas>
+          </div>
+          <div class="canvasContainer" id="tempStatContainer">
+            <h4>Temperatura</h4><canvas id="canvasTemp" class="canvas"></canvas>
+          </div>
+          <div class="canvasContainer" id="phStatContainer">
+            <h4>ph</h4><canvas id="canvasPh" class="canvas"></canvas>
+          </div>
+          <div class="canvasContainer" id="lightStatContainer">
+            <h4>Luz</h4><canvas id="canvasLight" class="canvas"></canvas>
+          </div>
+        </section>
+      </div>
+      </div>
+    <i class="icon flaticon-right226" id="menu-toggle"></i>
   </div>
 </div>
 <%= javascript_include_tag "compiled/statistics", "data-turbolinks-track" => true %>
