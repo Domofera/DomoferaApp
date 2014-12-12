@@ -5442,6 +5442,14 @@ button.close {
 .flaticon-winds2:before {
   content: "\e01a"; }
 
+@font-face {
+  font-family: 'FeraFont';
+  src: url('../Crop.ttf') format('truetype'); }
+
+@font-face {
+  font-family: 'DomoFont';
+  src: url('../Geometry.otf') format('truetype'); }
+
 .main-form {
   display: block;
   width: 100%;
@@ -5486,11 +5494,16 @@ button.close {
   font-size: 1.5em;
   display: block;
   background-color: #0Cb6b6;
-  border: none;
+  border: 3px solid transparent;
   padding: 8px;
   margin: 5px auto 5px auto;
   margin-top: 5px;
   color: white; }
+
+.simple-submit:hover {
+  background-color: white;
+  border: 3px solid #0cb6b6;
+  color: #0cb6b6; }
 
 .login-title {
   color: #555;
@@ -5526,7 +5539,7 @@ html, body {
   font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 .bg-primary {
-  background: url("../headerBg.png") no-repeat center center scroll;
+  background: url("../tomates.jpg") no-repeat center center scroll;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -5602,7 +5615,7 @@ i {
   position: relative;
   width: 100%;
   height: 100%;
-  background: url("../headerBg.png") no-repeat center center scroll;
+  background: url("../hortalizas.jpg") no-repeat center center scroll;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -5610,6 +5623,12 @@ i {
   background-attachment: fixed;
   padding-top: 10px;
   padding-bottom: 20px; }
+
+.domo {
+  font-family: 'DomoFont'; }
+
+.fera {
+  font-family: 'FeraFont'; }
 
 .main-title {
   color: white;
@@ -5717,12 +5736,7 @@ a {
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
-  background-color: #0CB6B6;
-  background: url(../sidebarBg.png) no-repeat center center scroll;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover; }
+  background-color: #47D1D1; }
 
 #wrapper.toggled #sidebar-wrapper {
   width: 250px; }
@@ -5818,25 +5832,48 @@ a {
   border-radius: 0;
   margin: 5px;
   min-width: 200px;
-  height: 50px; }
+  height: 50px;
+  color: white;
+  font-size: 1.3em; }
 
 .all {
-  border: 1px solid silver; }
+  border: 1px solid silver;
+  color: #333; }
 
 .humidity {
-  background-color: #81CFE0; }
+  background-color: #47A3FF; }
+
+.humidity:hover {
+  background-color: #007AA3;
+  color: white; }
 
 .wind {
-  background-color: #E6B8E6; }
+  background-color: #E62E8A; }
+
+.wind:hover {
+  background-color: #B2246B;
+  color: white; }
 
 .floor {
-  background-color: #D65C33; }
+  background-color: #CC3300; }
+
+.floor:hover {
+  background-color: #8F2400;
+  color: white; }
 
 .temp {
-  background-color: #FF9933; }
+  background-color: #E65C00; }
+
+.temp:hover {
+  background-color: #B24700;
+  color: white; }
 
 .ph {
-  background-color: #00FF99; }
+  background-color: #009933; }
+
+.ph:hover {
+  background-color: #006B24;
+  color: white; }
 
 .light {
   background-color: #FFFF99; }
@@ -5873,13 +5910,29 @@ a {
   cursor: pointer; }
 
 .logout {
-  float: right;
+  float: right; }
+
+.login {
+  position: absolute;
+  display: block; }
+
+.orange {
+  width: 150px;
+  text-align: center;
   margin: 5px;
   padding: 10px;
   font-size: 1.2em;
-  background-color: #333;
+  background-color: #E65C00;
   opacity: 0.8;
-  color: white; }
+  color: white;
+  border: 3px solid transparent; }
+
+.orange:hover {
+  text-decoration: none;
+  background-color: white;
+  color: #E65C00;
+  border: 3px solid #E65C00;
+  cursor: pointer; }
 
 .navigator {
   display: inline-block;
