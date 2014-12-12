@@ -23,7 +23,7 @@ class TerminalsController < ApplicationController
 	  				flash[:notice] = "Nuevo terminal creado"
 	  			else
 	  				flash[:notice] = @terminal.errors.full_messages.to_a.join(', ');
-	  		    end
+	  		  end
 	  		redirect_to user_terminals_path
 			else
 				flash[:notice] = "Ya tienes 4 terminales, no puedes crear más"
