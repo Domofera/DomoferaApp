@@ -46,11 +46,17 @@
   font-size: 1.5em;
   display: block;
   background-color: #0Cb6b6;
-  border: none;
+  border: 3px solid transparent;
   padding: 8px;
   margin: 5px auto 5px auto;
   margin-top: 5px;
   color: white;
+}
+
+.simple-submit:hover {
+  background-color: white;
+  border: 3px solid #0cb6b6;
+  color: #0cb6b6;
 }
 
 .login-title

@@ -11,14 +11,34 @@
   cursor: pointer;
 }
 
+
 .logout {
   float: right;
+}
+
+.login {
+  position: absolute;
+  display: block;
+}
+
+.orange {
+  width: 150px;
+  text-align: center;
   margin: 5px;
   padding: 10px;
   font-size: 1.2em;
-  background-color: #333;
+  background-color: #E65C00;
   opacity: 0.8;
   color: white;
+  border: 3px solid transparent;
+}
+
+.orange:hover {
+  text-decoration: none;
+  background-color: white;
+  color: #E65C00;
+  border: 3px solid #E65C00;
+  cursor: pointer;
 }
 
 .navigator {

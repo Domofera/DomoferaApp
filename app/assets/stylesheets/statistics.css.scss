@@ -24,30 +24,58 @@
   margin: 5px;
   min-width: 200px;
   height: 50px;
+  color: white;
+  font-size: 1.3em;
 }
 
 .all {
   border: 1px solid silver;
+  color: #333;
 }
 
 .humidity {
-  background-color: #81CFE0;
+  background-color: #47A3FF;
+}
+
+.humidity:hover {
+  background-color: #007AA3;
+  color: white;
 }
 
 .wind {
-  background-color: #E6B8E6;
+  background-color: #E62E8A;
+}
+
+.wind:hover {
+  background-color: #B2246B;
+  color: white;
 }
 
 .floor {
-  background-color: #D65C33;
+  background-color: #CC3300;
+}
+
+.floor:hover {
+  background-color: #8F2400;
+  color: white;
 }
 
 .temp {
-  background-color: #FF9933;
+  background-color: #E65C00;
+}
+
+.temp:hover {
+  background-color: #B24700;
+  color: white;
 }
 
 .ph {
-  background-color: #00FF99;
+  background-color: #009933;
+}
+
+.ph:hover {
+  background-color: #006B24;
+  color: white;
 }
 
 .light {

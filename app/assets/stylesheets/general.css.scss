@@ -13,17 +13,18 @@ body {
     font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
-#page-body {
-}
+// #page-body {
+// }
 
 .bg-primary {
-  background: url("../headerBg.png") no-repeat center center scroll;
+  background: url("../tomates.jpg") no-repeat center center scroll;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
   background-attachment: fixed;
 }
+
 .text-vertical-center {
     display: table-cell;
     text-align: center;
@@ -113,7 +114,7 @@ i {
     position: relative;
     width: 100%;
     height: 100%;
-    background: url("../headerBg.png") no-repeat center center scroll;
+    background: url("../hortalizas.jpg") no-repeat center center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -121,6 +122,14 @@ i {
     background-attachment: fixed;
     padding-top: 10px;
     padding-bottom: 20px;
+}
+
+.domo {
+  font-family: 'DomoFont';
+}
+
+.fera {
+  font-family: 'FeraFont';
 }
 
 .main-title {
