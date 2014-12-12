@@ -4,6 +4,7 @@
   <title>Domofera - Home</title>
   <%= stylesheet_link_tag "compiled/style", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "compiled/script", "data-turbolinks-track" => true %>
+  <%= favicon_link_tag 'official/logo.png', :type => 'image/png', "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -11,8 +12,8 @@
 <header id="top" class="header">
     <div class="text-vertical-center">
         <%= render :partial => "shared/flash_messages.html.erb" %>
-        <img src="assets/official/logo.png" alt="Logo Domofera"/>
-        <h1 class="main-title">Domofera</h1>
+        <img src="assets/official/logo_shadow.png" alt="Logo Domofera" id="logo-domofera"/>
+        <h1 class="main-title"><span class="domo">Domo</span><span class="fera">fera</span></h1>
         <h3 class="main-title">La APP de los agricultores Urbanos</h3>
         <%= link_to "Iniciar Sesión", login_path, :class => "btn btn-dark btn-lg",:remote => false %>
         <%= link_to "Regístrate", new_user_path, :class => "btn btn-dark btn-lg",:remote => false %>

@@ -4,12 +4,13 @@
   <title>Domofera - Home</title>
   <%= stylesheet_link_tag "compiled/style", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "compiled/script", "data-turbolinks-track" => true %>
+  <%= favicon_link_tag 'official/logo.png', :type => 'image/png', "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 <div id="page-content">
 <header id="top" class="header">
-  <a class="main-link" href="/">Principal</a>
+  <a href="/" class="orange login">Inicio</a>
     <div class="text-vertical-center">
       <img src="assets/official/logo.png" alt="Logo Domofera"/>
         <h1 class="main-title">Domofera</h1>
