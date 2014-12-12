@@ -11,11 +11,9 @@ class Terminal < ActiveRecord::Base
 																							numeros y espacios en blanco"}
 
   validates :password, presence: true,
-           length: { maximum: 20 },
-           format: { with: /\A[a-zA-Z0-9' ']*\z/ }
+           length: { maximum: 20 }
 
 	validates :description,
-					 length: { maximum: 60 },
-					 format: { with: /\A[a-zA-Z0-9' ']*\z/ }
+					 length: { maximum: 60 }
 
 end
