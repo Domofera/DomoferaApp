@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Domofera - Dashboard</title>
-  <%= stylesheet_link_tag "compiled/style", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "compiled/script", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body class="<%= controller_name %> <%= action_name %>" id="page-body">
-  <%= render "shared/flash_messages" %>
-  <div class="top-menu">
-    <div id="page-content">
-      <div id="wrapper">
-        <%= render "layouts/sidebar" %>
-        <%= yield %>
+  <head>
+    <title>Domofera - Dashboard</title>
+    <%= stylesheet_link_tag "compiled/style", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "compiled/script", "data-turbolinks-track" => true %>
+    <%= favicon_link_tag 'official/logo.png', :type => 'image/png', "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body id="page-body">
+    <%= render "shared/flash_messages" %>
+    <div class="top-menu">
+      <div id="page-content">
+        <div id="wrapper">
+          <%= render "layouts/sidebar" %>
+          <%= yield %>
+        </div>
       </div>
     </div>
-  </div>
-</body>
+  </body>
 </html>
