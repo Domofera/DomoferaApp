@@ -9,3 +9,5 @@ ENV['MANDRILL_SMTP_PORT'] = '587'
 ENV['MANDRILL_SMTP_SERVER'] = 'smtp.mandrillapp.com'
 ENV['MANDRILL_USERNAME'] = 'app31771576@heroku.com'
 ENV['MANDRILL_APIKEY'] = 'Tw2_2q4CNC-4_0xOzUK38g'
+
+ENV['PROXIMO_URL'] = 'http://proxy:f0b2d0519d4b-4900-a477-82d14172e6a6@proxy-23-21-235-22.proximo.io'

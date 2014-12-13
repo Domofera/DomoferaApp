@@ -29,7 +29,8 @@ gem 'google-api-client', '>= 0.6.2', :require => 'google/api_client'
 gem 'signet', '>=0.4.5'
 gem 'json'
 
-gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'rest-client'
+gem 'newrelic_rpm'
 
 group :production do
 	gem 'rails_12factor'
