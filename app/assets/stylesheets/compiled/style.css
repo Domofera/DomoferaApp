@@ -5416,7 +5416,8 @@ button.close {
   content: "\e011"; }
 
 .flaticon-right226:before {
-  content: "\e012"; }
+  content: "\e012";
+  font-size: 30px; }
 
 .flaticon-sea1:before {
   content: "\e013"; }
@@ -5698,7 +5699,12 @@ footer {
   padding: 100px 0; }
 
 a {
-  color: #CC5200; }
+  color: #FFA347; }
+
+.header > a {
+  background-color: #FF6600;
+  padding: 5px;
+  color: white; }
 
 .legal-content {
   text-align: left;
@@ -5706,6 +5712,21 @@ a {
   padding: 30px;
   margin: 0 auto 0 auto;
   background-color: white; }
+
+.responsive-video {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 60px;
+  overflow: hidden;
+  height: 0; }
+
+.responsive-video iframe, .responsive-video object, .responsive-video embed {
+  margin: 0 auto 0 auto;
+  position: absolute;
+  top: 0;
+  left: 10%;
+  width: 80%;
+  height: 80%; }
 
 
 
@@ -5759,9 +5780,8 @@ a {
   list-style: none; }
 
 .sidebar-nav li {
-  text-indent: 30px;
+  text-indent: 20px;
   line-height: 40px;
-  font-size: 24px;
   margin-top: 10px; }
 
 .sidebar-nav li a {
@@ -5771,7 +5791,6 @@ a {
 
 .sidebar-nav li a:hover {
   text-decoration: none;
-  color: black;
   background: rgba(255, 255, 255, 0.2); }
 
 .sidebar-nav li a:active, .sidebar-nav li a:focus {
@@ -5780,13 +5799,14 @@ a {
 .sidebar-nav > .sidebar-brand {
   height: 65px;
   font-size: 28px;
-  line-height: 60px; }
+  line-height: 60px;
+  margin-top: 30px; }
 
 .sidebar-nav > .sidebar-brand a {
-  color: white; }
+  color: white;
+  font-weight: normal; }
 
 .sidebar-nav > .sidebar-brand a:hover {
-  color: #fff;
   background: none; }
 
 @media (min-width: 768px) {
@@ -5876,7 +5896,11 @@ a {
   color: white; }
 
 .light {
-  background-color: #FFFF99; }
+  background-color: #E6B800; }
+
+.light:hover {
+  background-color: #806600;
+  color: white; }
 
 .alert {
   opacity: 0.9;
@@ -5904,7 +5928,11 @@ a {
 
 /* Toggle Styles */
 #menu-toggle {
-  color: #0CB6B6; }
+  color: #333;
+  position: absolute;
+  top: 0px;
+  left: 10px;
+  z-index: 1000; }
 
 #menu-toggle:hover {
   cursor: pointer; }
@@ -5940,3 +5968,6 @@ a {
 
 .edit-user {
   width: 100%; }
+
+.sidebar {
+  height: 30px; }

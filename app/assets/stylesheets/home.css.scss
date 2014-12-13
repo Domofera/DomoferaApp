@@ -9,3 +9,22 @@
   margin: 0 auto 0 auto;
   background-color: rgba(255,255,255,1);
 }
+
+.responsive-video {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 60px; overflow: hidden;
+  height: 0;
+}
+
+
+.responsive-video iframe,
+.responsive-video object,
+.responsive-video embed {
+  margin: 0 auto 0 auto;
+  position: absolute;
+  top: 0;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+}

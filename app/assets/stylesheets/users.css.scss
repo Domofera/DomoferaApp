@@ -4,7 +4,11 @@
 /* Toggle Styles */
 
 #menu-toggle {
-  color: #0CB6B6;
+  color: #333;
+  position: absolute;
+  top: 0px;
+  left: 10px;
+  z-index: 1000;
 }
 
 #menu-toggle:hover {
@@ -48,4 +52,8 @@
 
 .edit-user {
   width: 100%;
+}
+
+.sidebar {
+  height: 30px;
 }
