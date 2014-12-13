@@ -34,11 +34,11 @@ class SessionsController < ApplicationController
       params.permit(:username, :email, :password)
     end
 
-    def authenticate(user, password)
-    if user && user.password_hash == BCrypt::Engine.hash_secret(password, user.password_salt)
-      true
-    else
-      false
-    end
-  end
+		def authenticate(user, password)
+			if user && user.password_hash == BCrypt::Engine.hash_secret(password, user.password_salt)
+				true
+			else
+				false
+			end
+		end
 end
