@@ -1,7 +1,7 @@
 <div class="row">
     <%= form_for @current_user, inline_errors: false, :class => 'simple-form' do |f| %>
         <div class="col-md-6">
-          <h3>Puedes cambiar tus datos:</h3>
+          <h4>Puedes cambiar tus datos:</h4>
           <%= f.text_field :username, :class => 'simple-input' %>
           <%= f.text_field :email, :class => 'simple-input' %>
           <%= f.text_field :city, :class => 'simple-input' %>
@@ -9,7 +9,7 @@
           <%= f.submit "Enviar datos", :class => 'simple-submit' %>
         </div>
         <div class="col-md-6">
-          <h3>También puedes cambiar tu contraseña:</h3>
+          <h4>También puedes cambiar tu contraseña:</h4>
           <%= f.password_field :password , :placeholder => 'Nueva Contraseña', :class => 'simple-input' %>
           <%= f.password_field :password_confirmation, :placeholder => 'Repetir Contraseña', :class => 'simple-input'  %>
           <%= f.submit "Enviar datos", :class => 'simple-submit' %>

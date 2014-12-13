@@ -17,20 +17,23 @@
         <h3 class="main-title">La APP de los agricultores Urbanos</h3>
         <%= link_to "Iniciar Sesión", login_path, :class => "btn btn-dark btn-lg",:remote => false %>
         <%= link_to "Regístrate", new_user_path, :class => "btn btn-dark btn-lg",:remote => false %>
-        <h4>O accede a mediante Google Plus <%= render :partial => "shared/google_plus_login.html.erb" %></h4>
+        <!-- <h4>O accede a mediante Google Plus <%= render :partial => "shared/google_plus_login.html.erb" %></h4> -->
     </div>
 </header>
-<section id="about" class="about">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
+        <section id="about" class="about">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12 text-center">
                 <h2>¿Qué es Domofera?</h2>
                 <p class="lead">Domofera es un sistema encargado de facilitar el cuidado del huerto urbano, que permitirá al usuario controlar su huerto desde cualquier dispositivo conectado a internet mediante un navegador web.
-</p>
+                </p>
+                  <div class="responsive-video">
+                    <iframe src="//www.youtube.com/embed/UkAMfEnrlx4" frameborder="0" allowfullscreen></iframe>
+                  </div>
+              </div>
             </div>
-        </div>
-    </div>
-</section>
+          </div>
+        </section>
 <section id="services" class="services bg-primary">
     <div class="container">
         <div class="row text-center">

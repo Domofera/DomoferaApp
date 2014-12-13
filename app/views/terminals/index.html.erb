@@ -1,11 +1,10 @@
   <div id="page-content-wrapper">
     <div class="container-fluid">
-      <p class="orange" id="new-terminal">Nuevo Terminal</p>
-      <div class="row" id="new-terminal-form">
-        <%= render "form_new_terminal" %>
-      </div>
       <h1>Terminales</h1>
-
+        <p class="orange" id="new-terminal">Nuevo Terminal</p>
+        <div class="row" id="new-terminal-form">
+          <%= render "form_new_terminal" %>
+        </div>
       <div class="row">
         <% @terminals.each_with_index do |terminal, index| %>
           <div class="col-lg-6">
