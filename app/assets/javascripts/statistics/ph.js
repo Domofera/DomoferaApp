@@ -7,7 +7,7 @@ var phData = {
     strokeColor : color.get('phDark'),
     highlightFill: color.get('phLight'),
     highlightStroke: color.get('phDark'),
-    data : [35,40,45,80,60,40,30,20,35,65,50,45]
+    data : [20,40,15,30,55,80,60,30,45,35,60,45]
   }
   ]
 }

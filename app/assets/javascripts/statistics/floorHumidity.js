@@ -7,7 +7,7 @@ var floorData = {
     strokeColor : color.get('floorDark'),
     highlightFill: color.get('floorLight'),
     highlightStroke: color.get('floorDark'),
-    data : [35,40,45,80,60,40,30,20,35,65,50,45]
+    data : [80,85,75,90,85,60,30,20,35,75,70,75]
   }
   ]
 }

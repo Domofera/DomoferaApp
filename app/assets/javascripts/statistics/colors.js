@@ -15,8 +15,8 @@ var Color = function() {
     'tempLight'     :'#FF9900',
     'tempDark'      :'#CC7A00',
 
-    'lightLight'    :'#FFFF99',
-    'lightDark'     :'#FFCC00',
+    'lightLight'    :'#E6B800',
+    'lightDark'     :'#806600',
 
     'phLight'       :'#009933',
     'phDark'        :'#006B24'

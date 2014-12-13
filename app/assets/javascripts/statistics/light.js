@@ -7,7 +7,7 @@ var lightData = {
     strokeColor : color.get('lightDark'),
     highlightFill: color.get('lightLight'),
     highlightStroke: color.get('lightDark'),
-    data : [35,40,45,80,60,40,30,20,35,65,50,45]
+    data : [20,25,25,40,45,60,75,85,60,55,45,30]
   }
   ]
 }
