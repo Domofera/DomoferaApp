@@ -3,16 +3,18 @@ class User < ActiveRecord::Base
   before_save :encrypt_password
   has_many   :terminals, :dependent => :destroy
 
-  validates :username, presence: true,
-					 length: { maximum: 20 },
-           format: { with: /\A[a-zA-Z0-9' ']*\z/ },
-					 :uniqueness => true
+  validates :username, :presence => { :message => "El nombre no puede estar vacío" }
+  validates :username, :length   => { :maximum => 20,
+                                      :message => "El nombre no puede tener más de
+                                       20 caracteres"}
+  validates :username, :format   => { :with    => /\A[a-zA-Z0-9' ']*\z/,
+                                      :message => "El nombre solo puede contener caracteres,
+                                       numeros y espacios en blanco"}
 
-  validates :email, :presence => true,
-            :uniqueness => true
+  validates :username, :uniqueness => { :message => "El nombre debe de ser único" }
 
-  validates_confirmation_of :password
-  validates_presence_of :password, :on => :create
+  validates :email, :presence => { :message => "El email no puede estar vacío" }
+  validates :email, :uniqueness  => { :message => "El email debe de ser único" }
 
   validates_confirmation_of :password
   validates_presence_of :password, :on => :create
