@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   attr_accessor :password, :password_confirmation
   before_save :encrypt_password
   has_many   :terminals, :dependent => :destroy
+  has_many   :todos, :dependent => :destroy
 
   validates :username, :presence => { :message => "El nombre no puede estar vacío" }
   validates :username, :length   => { :maximum => 20,
