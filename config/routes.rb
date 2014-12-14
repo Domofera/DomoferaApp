@@ -9,11 +9,13 @@ Rails.application.routes.draw do
 
   resources :sensors, only: [:new, :create, :edit, :update, :destroy]
   resources :terminals, only: [:new, :create, :edit, :update, :destroy]
+  resources :todos, only: [:new, :create, :edit, :update, :destroy]
   resources :users, only: [:new, :create]
   resources :sessions
   resource :user do
     get :confirm, on: :collection
     get :statistics, on: :collection
     resources :terminals, only: [:index, :show]
+    resources :todos, only: [:index, :show]
   end
 end
