@@ -4,6 +4,8 @@ class UsersController < ApplicationController
 
 	def show
 		@current_user = current_user
+		@todo = Todo.new
+		@todos = @current_user.todos
 		render "show"
 	end
 
