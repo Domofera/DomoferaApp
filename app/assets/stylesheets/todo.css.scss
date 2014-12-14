@@ -1,0 +1,57 @@
+// Place all the styles related to the todo controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.input-group-addon {
+  border: 1px solid #0CB6B6;
+  background-color: white;
+}
+
+.input-group-addon > input {
+  border: none;
+}
+
+.input-submit {
+  display: inline-block;
+  width: 100px;
+  font-size: 15px;
+  margin-left: -20px;
+}
+
+.input-group {
+  margin-bottom: 10px;
+}
+
+.add-big {
+  width: 60%;
+}
+
+.add-medium {
+  width: 25%;
+}
+
+.add-small {
+  width: 5%;
+  background-color: #0CB6B6;
+}
+
+.input-orange {
+  border: 1px solid orange;
+}
+
+.add-small.input-orange {
+  background-color: orange;
+}
+
+.add-small > a {
+  color: white;
+}
+
+.add-small > a:hover {
+  color: black;
+}
+
+.submit-orange {
+  background-color: orange;
+}
