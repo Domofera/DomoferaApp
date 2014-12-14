@@ -1,0 +1,14 @@
+<div class="row">
+  <%= form_for @todo, inline_errors: false do |f| %>
+  <div class="col-md-9">
+    <div class="input-group">
+      <span class="input-group-addon add-big input-orange"><%= f.text_field :content, :class => 'form-control', :placeholder => 'Nueva tarea' %></span>
+      <span class="input-group-addon add-medium input-orange"><%= f.date_field :taskdate %></span>
+      <span class="input-group-addon add-small input-orange"><%= f.check_box :done %></span>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <%= f.submit "Añadir", :class => 'simple-submit input-submit submit-orange' %>
+  </div>
+  <% end %>
+</div>

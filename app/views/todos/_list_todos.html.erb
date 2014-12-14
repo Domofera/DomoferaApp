@@ -1,0 +1,20 @@
+<div class="row">
+<% @todos.each_with_index do |todo, index| %>
+  <%= form_for todo, inline_errors: false do |f| %>
+  <div class="col-md-9">
+    <div class="input-group">
+      <span class="input-group-addon add-big"><%= f.text_field :content, :class => 'form-control' %></span>
+      <span class="input-group-addon add-medium"><%= f.date_field :taskdate %></span>
+      <span class="input-group-addon add-small"><%= f.check_box :done %></span>
+      <span class="input-group-addon add-small"><%= link_to "x", {:controller => :todos,
+        :action => 'destroy',
+        :id => todo.id },
+        :method => :delete %></span>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <%= f.submit "Actualizar", :class => 'simple-submit input-submit'%>
+  </div>
+  <% end %>
+<% end %>
+</div>
