@@ -8,4 +8,9 @@ $( document ).ready(function() {
     $('.canvasContainer').fadeOut('fast');
     $('.canvasContainer').fadeIn('slow');
   })
+
+  $(window).resize(function(event) {
+    console.log('holi');
+    $('.canvasContainer').fadeIn('slow');
+  })
 });

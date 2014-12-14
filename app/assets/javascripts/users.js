@@ -16,13 +16,13 @@ $( document ).ready(function() {
     //night
     '01n': 'flaticon-crescent32',
     '02n': 'flaticon-clouds',
-    '03d': 'flaticon-simple33',
-    '04d': 'flaticon-clouds11',
-    '09d': 'flaticon-rain4',
-    '10d': 'flaticon-sun8',
-    '11d': 'flaticon-electrical16',
-    '13d': 'flaticon-snowing9',
-    '50d': 'flaticon-sea1'
+    '03n': 'flaticon-simple33',
+    '04n': 'flaticon-clouds11',
+    '09n': 'flaticon-rain4',
+    '10n': 'flaticon-sun8',
+    '11n': 'flaticon-electrical16',
+    '13n': 'flaticon-snowing9',
+    '50n': 'flaticon-sea1'
   }
 
   var getData = function(data) {
