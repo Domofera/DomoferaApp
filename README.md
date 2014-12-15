@@ -23,3 +23,15 @@ Domofera will develop:
 ##References
 
 [Angular-Rails Tutorial](http://angular-rails.com/)
+
+##Live Demo
+![](gifs/mainpage.gif)
+![](gifs/login.gif)
+![](gifs/newsession.gif)
+![](gifs/profile.gif)
+![](gifs/todos.gif)
+![](gifs/statistics.gif)
+![](gifs/terminalsprofile.gif)
+![](gifs/logout.gif)
+
+
