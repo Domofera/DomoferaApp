@@ -7194,13 +7194,13 @@ body .ui-tooltip {
 
 .sidebar-nav li {
   text-indent: 20px;
-  line-height: 40px;
-  margin-top: 10px; }
+  line-height: 20px; }
 
 .sidebar-nav li a {
   display: block;
   text-decoration: none;
-  color: white; }
+  color: white;
+  padding: 10px 0; }
 
 .sidebar-nav li a:hover {
   text-decoration: none;
