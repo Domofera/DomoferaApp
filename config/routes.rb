@@ -7,8 +7,8 @@ Rails.application.routes.draw do
   get "sign_up" => "users#new", :as => "sign_up"
   get "legal" => "home#legal", :as => 'legal'
 
-  resources :sensors, only: [:new, :create, :edit, :update, :destroy]
   resources :terminals, only: [:new, :create, :edit, :update, :destroy]
+  resources :days,  only: [:new, :create, :edit, :update, :destroy]
   resources :todos, only: [:new, :create, :edit, :update, :destroy]
   resources :users, only: [:new, :create]
   resources :sessions
@@ -17,5 +17,12 @@ Rails.application.routes.draw do
     get :statistics, on: :collection
     resources :terminals, only: [:index, :show]
     resources :todos, only: [:index, :show]
+  end
+
+  #Api functions
+  scope '/api' do
+    scope '/sensors' do
+      post '/' => 'sensors#create'
+    end
   end
 end
