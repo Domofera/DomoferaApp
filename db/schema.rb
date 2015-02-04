@@ -11,26 +11,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150121142109) do
+ActiveRecord::Schema.define(version: 20150204152157) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "month_records", force: true do |t|
+  create_table "days", force: true do |t|
     t.integer  "terminal_id"
-    t.string   "month"
-    t.string   "data"
-    t.string   "generalData"
+    t.integer  "day_name"
+    t.integer  "month"
+    t.integer  "year"
+    t.float    "temperature_floor_max"
+    t.float    "temperature_floor_min"
+    t.float    "temperature_floor_average"
+    t.float    "temperature_air_min"
+    t.float    "temperature_air_max"
+    t.float    "temperature_air_average"
+    t.float    "humidity_floor_max"
+    t.float    "humidity_floor_min"
+    t.float    "humidity_floor_average"
+    t.float    "humidity_air_max"
+    t.float    "humidity_air_min"
+    t.float    "humidity_air_average"
+    t.float    "wind_max"
+    t.float    "wind_min"
+    t.float    "wind_average"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "sensors", force: true do |t|
-    t.integer  "terminal_id"
+    t.integer  "day_id"
     t.string   "name"
-    t.string   "value"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.float    "humidity_air"
+    t.float    "humidity_floor"
+    t.float    "temperature_air"
+    t.float    "temperature_floor"
+    t.float    "light"
   end
 
   create_table "terminals", force: true do |t|
