@@ -1,6 +1,6 @@
   <div id="page-content-wrapper">
     <div class="container-fluid">
-      <h1>Terminales</h1>
+      <h2>Terminales</h2>
         <p class="orange" id="new-terminal">Nuevo Terminal</p>
         <div class="row" id="new-terminal-form">
           <%= render "form_new_terminal" %>
@@ -17,14 +17,9 @@
                 </button>
               </div>
               <div class="panel-body terminals">
-                <h4>Descripción: <%= terminal.description %></h4>
-                <h4>Código: <%= terminal.password %></h4>
-                <h4>Sensores:</h4>
-                <% terminal.sensors.each do |sensor| %>
-                <ul>
-                  <h4><li><%= sensor.name %>: <%= sensor.value %></li></h4>
-                </ul>
-                <% end %>
+                <h5>Descripción: <%= terminal.description %></h5>
+                <h5>Código: <%= terminal.password %></h5>
+                <h5>Datos:</h5>
               </div>
           </div>
         </div>
