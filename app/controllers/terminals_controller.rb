@@ -19,7 +19,7 @@ class TerminalsController < ApplicationController
 			if current_user.terminals.count < 4
 				@terminal = Terminal.new terminal_params.merge(:user_id => current_user.id)
 	  			if @terminal.save
-						create_and_add_sensors(@terminal.id)
+						create_first_day(@terminal.id)
 	  				flash[:notice] = "Nuevo terminal creado"
 	  			else
 	  				flash[:notice] = @terminal.errors.full_messages.to_a.join(', ');
@@ -60,12 +60,7 @@ class TerminalsController < ApplicationController
 		params.require(:terminal).permit(:name, :description, :password)
 	end
 
-	def create_and_add_sensors id
-		Sensor.new(:terminal_id => id, :name => 'Humedad', :value => '0').save
-		Sensor.new(:terminal_id => id, :name => 'Humedad-Suelo', :value => '0').save
-		Sensor.new(:terminal_id => id, :name => 'Temperatura', :value => '0').save
-		Sensor.new(:terminal_id => id, :name => 'pH', :value => '0').save
-		Sensor.new(:terminal_id => id, :name => 'Luz', :value => '0').save
-		Sensor.new(:terminal_id => id, :name => 'Viento', :value => '0').save
+	def create_first_day id
+			Day.new(:terminal_id => id)
 	end
 end
