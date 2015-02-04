@@ -1,6 +1,6 @@
 class Terminal < ActiveRecord::Base
 	belongs_to :user
-	has_many   :sensors, :dependent => :destroy
+	has_many   :days, :dependent => :destroy
 
 	validates :name, :presence => { :message => "El nombre no puede estar vacío" }
 	validates :name, :length   => { :maximum => 20,
