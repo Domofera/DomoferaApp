@@ -5348,6 +5348,7 @@ button.close {
     display: none !important; }
  }
 
+
 @font-face {
   font-family: "Flaticon";
   src: url("../flaticon.eot");
@@ -5600,7 +5601,7 @@ hr {
   font-size: 30px; }
 
 .panel {
-  color: #0CB6B6;
+  color: #333333;
   background-color: white;
   border-color: #ddd;
   text-align: center; }
@@ -7140,6 +7141,7 @@ body .ui-tooltip {
   opacity: 0.2;
   filter: Alpha(Opacity=20);
   border-radius: 5px; }
+
 
 
 
