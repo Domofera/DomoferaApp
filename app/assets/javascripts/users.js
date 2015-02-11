@@ -40,6 +40,7 @@ $( document ).ready(function() {
     $('#wind').text(wind);
     $('#icon').addClass('icon ' + icon);
   }
+
   var loadingImg = function() {
     $('#loading').src = "/assets/loading.gif";
   }
@@ -53,11 +54,18 @@ $( document ).ready(function() {
   }
 
   var city = $('#city-name').text();
-  var url = "http://api.openweathermap.org/data/2.5/weather?q="+ city +",es&lang=es";
+  var id   = 'f822f64911c709b0f043e341badd5d0e';
+  var url  = "http://api.openweathermap.org/data/2.5/weather?q="+ city +",es&lang=es&APPID="+ id;
   $.ajax({
     url: url,
     type: 'GET',
-    beforeSend: function() {
+    beforeSend: function(xhr) {
+      // xhr.setRequestHeader('Access-Control-Allow-Headers', 'Origin, Methods, X-Requested-With, Content-Type, Accept, Authorization');
+      // xhr.setRequestHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+      // xhr.setRequestHeader('Access-Control-Allow-Methods', 'PUT, GET, OPTIONS');
+      // xhr.setRequestHeader('Access-Control-Request-Method', 'OPTIONS, GET');
+      // xhr.setRequestHeader("Content-Type", "application/json");
+      // console.log(xhr);
       loadingImg();
     },
     complete: function() {

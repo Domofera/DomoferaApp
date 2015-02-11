@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
       @current_user ||= User.find_by_session_token(session[:token])
     end
   end
-  
+
   private
   def redirect_if_logged_in
     if current_user

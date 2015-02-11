@@ -23,9 +23,14 @@ module Domoferaapp
     end
 
     config.action_dispatch.default_headers.merge!({
-      "Access-Controll-Allow-Origin" => "http://localhost/3000",
-      "Access-Controll-Allow-Origin" => "http://api.openweathermap.org/data/2.5/weather"
+      "Access-Controll-Allow-Origin"  => "https://localhost/3000",
+      "Access-Controll-Allow-Origin"  => "https://localhost/3000/user",
+      "Access-Controll-Allow-Origin"  => "https://api.openweathermap.org/data/2.5/weather",
+      "Access-Control-Allow-Methods"  => "POST, PUT, DELETE, GET, OPTIONS",
+      "Access-Control-Request-Method" => "*",
+      "Access-Control-Allow-Headers"  => "Origin, X-Requested-With, Content-Type, Accept, Authorization"
       })
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
