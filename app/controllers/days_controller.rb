@@ -40,9 +40,9 @@ class DaysController < ApplicationController
                             :humidity_air_max,
                             :humidity_air_min,
                             :humidity_air_average,
-                            :wind_max,
-                            :wind_min,
-                            :wind_average)
+                            :light_max,
+                            :light_min,
+                            :light_average)
   end
 
   def get_day

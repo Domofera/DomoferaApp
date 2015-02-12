@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150204152157) do
+ActiveRecord::Schema.define(version: 20150211194918) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,9 +33,9 @@ ActiveRecord::Schema.define(version: 20150204152157) do
     t.float    "humidity_air_max"
     t.float    "humidity_air_min"
     t.float    "humidity_air_average"
-    t.float    "wind_max"
-    t.float    "wind_min"
-    t.float    "wind_average"
+    t.float    "light_max"
+    t.float    "light_min"
+    t.float    "light_average"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
