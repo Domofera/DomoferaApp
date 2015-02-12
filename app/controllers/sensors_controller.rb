@@ -5,38 +5,46 @@ class SensorsController < ApplicationController
   end
 
   def create
-    @user     = User.find_by(:username => data['username'])
-    @terminal = Terminal.find(data['id'])
-    if (correctData(@terminal, data))
-      @day = @terminal.days.find_by(day_name: data['day'], month: data['month'], year: data['year'])
-        if (@day.nil?)
-          @day = new_day(@terminal)
-         end
-        @sensor = Sensor.new(:day_id            => @day.id,
-                             :humidity_air      => data['ha'],
-                             :humidity_floor    => data['hf'],
-                             :temperature_air   => data['ta'],
-                             :temperature_floor => data['tf'],
-                             :light             => data['l']
-                            )
-          if (@sensor.save)
-            update_day_params(@day)
-            respond_to do |format|
-              msg = { :status => "ok", :message => "Sensor created successfully"}
-              format.json  { render :json => msg }
-            end
-          else
-            respond_to do |format|
-              msg = { :status => "bad", :message => @sensor.errors.full_messages.to_a.join(", ")}
-              format.json  { render :json => msg }
-            end
-          end #end sensor saved
+    @terminal = Terminal.find_by_id(data['id'])
+    if (@terminal)
+      @user = User.find_by_id(@terminal.user_id)
+      if (correctData(@terminal, @user, data))
+        @day = @terminal.days.find_by(day_name: data['day'], month: data['month'], year: data['year'])
+          if (@day.nil?)
+            @day = new_day(@terminal)
+            @day.save
+           end
+          @sensor = Sensor.new(:day_id            => @day.id,
+                               :humidity_air      => data['ha'],
+                               :humidity_floor    => data['hf'],
+                               :temperature_air   => data['ta'],
+                               :temperature_floor => data['tf'],
+                               :light             => data['l']
+                              )
+            if (@sensor.save)
+              update_day_params(@day)
+              respond_to do |format|
+                msg = { :status => "ok", :message => "Sensor created successfully"}
+                format.json  { render :json => msg }
+              end
+            else
+              respond_to do |format|
+                msg = { :status => "bad", :message => @sensor.errors.full_messages.to_a.join(", ")}
+                format.json  { render :json => msg }
+              end
+            end #end sensor saved
+        else
+          respond_to do |format|
+            msg = { :status => "bad", :message => correctData(@terminal, @user, data)}
+            format.json  { render :json => msg }
+          end
+        end #end correct data
       else
         respond_to do |format|
-          msg = { :status => "bad", :message => correctData(@terminal, data)}
+          msg = { :status => "bad", :message => 'Incorrect parameters'}
           format.json  { render :json => msg }
         end
-      end #end correct data
+      end#end terminal
   end
 
   private
@@ -48,8 +56,12 @@ class SensorsController < ApplicationController
     return ((day == Time.now.day) && (month == Time.now.month) && (year == Time.now.year))
   end
 
-  def correctData(terminal, data)
-    return ((data['password'] == terminal.password) && (isToday(data['day'].to_i, data['month'].to_i, data['year'].to_i)))
+  def correctData(terminal, user, data)
+    return ((terminal) &&
+            (user)     &&
+            (data['password'] == terminal.password) &&
+            (isToday(data['day'].to_i, data['month'].to_i, data['year'].to_i)) &&
+            (user.username == data['username']))
   end
 
   def new_day(terminal)
@@ -72,7 +84,7 @@ class SensorsController < ApplicationController
                    :light_max                 => 0,
                    :light_min                 => 0,
                    :light_average             => 0
-                  ).save
+                  )
   end
 
   def update_day_params(day)
