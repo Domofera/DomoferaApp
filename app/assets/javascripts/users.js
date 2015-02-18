@@ -60,12 +60,6 @@ $( document ).ready(function() {
     url: url,
     type: 'GET',
     beforeSend: function(xhr) {
-      // xhr.setRequestHeader('Access-Control-Allow-Headers', 'Origin, Methods, X-Requested-With, Content-Type, Accept, Authorization');
-      // xhr.setRequestHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
-      // xhr.setRequestHeader('Access-Control-Allow-Methods', 'PUT, GET, OPTIONS');
-      // xhr.setRequestHeader('Access-Control-Request-Method', 'OPTIONS, GET');
-      // xhr.setRequestHeader("Content-Type", "application/json");
-      // console.log(xhr);
       loadingImg();
     },
     complete: function() {

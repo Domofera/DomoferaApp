@@ -23,10 +23,8 @@ class SensorsController < ApplicationController
                               )
             if (@sensor.save)
               update_day_params(@day)
-              respond_to do |format|
                 msg = { :status => "ok", :message => "Sensor created successfully"}
-                format.json  { render :json => msg }
-              end
+                render :json => msg
             else
               respond_to do |format|
                 msg = { :status => "bad", :message => @sensor.errors.full_messages.to_a.join(", ")}
@@ -45,6 +43,11 @@ class SensorsController < ApplicationController
           format.json  { render :json => msg }
         end
       end#end terminal
+  end
+
+  def error
+      msg = { :status => "bad", :message => 'Incorrect parameters'}
+      render :json => msg
   end
 
   private
