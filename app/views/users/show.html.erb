@@ -1,3 +1,5 @@
+<%= stylesheet_link_tag "compiled/fullcalendar", media: "all", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "compiled/calendar", "data-turbolinks-track" => true %>
 <div id="page-content-wrapper">
   <div class="container-fluid">
     <div class="row">
@@ -57,5 +59,7 @@
       <%= render "todos/list_todos" %>
     </div>
       <i class="icon flaticon-right226" id="menu-toggle"></i>
-    </div>
+  </div>
+  <div class="container-fluid">
+    <div id="calendar"></div>
 </div>
