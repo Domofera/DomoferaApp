@@ -20,12 +20,26 @@ var sass = require('gulp-sass');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
+var calendar = ['app/assets/javascripts/calendar/moment.min.js',
+                'app/assets/javascripts/calendar/fullcalendar.min.js',
+                'app/assets/javascripts/calendar/calendarData.js',
+                'app/assets/javascripts/calendar/calendarConfig.js'
+              ];
+var calendarstyle = ['app/assets/stylesheets/fullcalendar/fullcalendar.min.css',
+                     'app/assets/stylesheets/fullcalendar/fullcalendar.print.css'
+]
 
 /************* Files *************/
 gulp.task('style', function() {
   return gulp.src(styleRootPath + styleRootExtension)
   .pipe(sass())
   .pipe(concat('style.css'))
+  .pipe(gulp.dest(styleDestPath));
+});
+
+gulp.task('calendarstyle', function() {
+  return gulp.src(calendarstyle)
+  .pipe(concat('fullcalendar.css'))
   .pipe(gulp.dest(styleDestPath));
 });
 
@@ -45,6 +59,12 @@ gulp.task('chartScripts', function() {
   .pipe(gulp.dest('app/assets/javascripts/compiled'));
 })
 
+gulp.task('calendar', function() {
+  return gulp.src(calendar)
+  .pipe(concat('calendar.js'))
+  .pipe(gulp.dest('app/assets/javascripts/compiled'));
+})
+
 /************* Others *************/
 gulp.task('lint', function() {
   return gulp.src(scriptPath + scriptExtension)
@@ -58,4 +78,4 @@ gulp.task('watch', function() {
   gulp.watch(styleRootPath + styleRootExtension, ['style']);
 });
 
-gulp.task('default', ['lint', 'style', 'scripts', 'chartScripts','watch']);
+gulp.task('default', ['lint', 'style', 'scripts', 'chartScripts', 'calendar', 'calendarstyle', 'watch']);
