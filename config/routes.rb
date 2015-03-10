@@ -23,7 +23,9 @@ Rails.application.routes.draw do
   scope '/api' do
     scope '/sensors' do
       post '/' => 'sensors#create'
-      get  '/' => 'sensors#error'
+    end
+    scope '/statistics' do
+      get  '/' => 'sensors#statistics'
     end
   end
 end
