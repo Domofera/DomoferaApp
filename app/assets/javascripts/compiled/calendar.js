@@ -100,6 +100,7 @@ $(document).ready(function() {
     return events;
   };
 
+  
 
   $('#calendar').fullCalendar({
     editable: true,
