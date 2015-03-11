@@ -26,33 +26,67 @@ class SensorsController < ApplicationController
                 msg = { :status => "ok", :message => "Sensor created successfully"}
                 render :json => msg
             else
-              respond_to do |format|
-                msg = { :status => "bad", :message => @sensor.errors.full_messages.to_a.join(", ")}
-                format.json  { render :json => msg }
-              end
+                sendError
             end #end sensor saved
         else
-          respond_to do |format|
-            msg = { :status => "bad", :message => correctData(@terminal, @user, data)}
-            format.json  { render :json => msg }
-          end
+            sendError
         end #end correct data
       else
-        respond_to do |format|
-          msg = { :status => "bad", :message => 'Incorrect parameters'}
-          format.json  { render :json => msg }
-        end
+        sendError
       end#end terminal
   end
 
-  def error
+  def sendError
+    respond_to do |format|
       msg = { :status => "bad", :message => 'Incorrect parameters'}
-      render :json => msg
+      format.json  { render :json => msg }
+    end
   end
+
+  def statistics
+    @terminal = Terminal.find_by_id(data['id'])
+    if (@terminal)
+      @user = User.find_by_id(@terminal.user_id)
+      if (correctDataStatistics(@terminal, @user, data))
+        if (data['mode'] == 'd')
+          respond_to do |format|
+            format.json {render :json => getDayData(@terminal, data['day'], data['month'], data['year']) }
+          end
+        elsif (data['mode'] == 'm')
+          respond_to do |format|
+            format.json {render :json => getMonthData(@terminal, data['month'], data['year']) }
+          end
+        elsif (data['mode'] == 'y')
+          respond_to do |format|
+            format.json {render :json => getYearData(@terminal, data['year']) }
+          end
+        else
+          sendError
+        end
+      else
+        sendError
+      end #incorrect_data
+    else
+      sendError
+    end #no_terminal
+  end
+
 
   private
   def data
     params
+  end
+
+  def getDayData(terminal, day, month, year)
+    terminal.days.where(:day_name => day, :month => month, :year => year)[0]
+  end
+
+  def getYearData(terminal, year)
+    terminal.days.where(:year => year)
+  end
+
+  def getMonthData(terminal, month, year)
+    terminal.days.where(:month => month, :year => year)[0]
   end
 
   def isToday(day, month, year)
@@ -60,11 +94,13 @@ class SensorsController < ApplicationController
   end
 
   def correctData(terminal, user, data)
-    return ((terminal) &&
-            (user)     &&
+    return ((terminal) && (user) &&
             (data['password'] == terminal.password) &&
-            (isToday(data['day'].to_i, data['month'].to_i, data['year'].to_i)) &&
-            (user.username == data['username']))
+            (data['username'] == user.username))
+  end
+
+  def correctDataStatistics(terminal, user, data)
+    return ((terminal) && (user) && (data['username'] == user.username))
   end
 
   def new_day(terminal)
@@ -109,9 +145,9 @@ class SensorsController < ApplicationController
       :humidity_air_min          => day.sensors.pluck(:humidity_air).min,
       :humidity_air_average      => day.sensors.pluck(:humidity_air).instance_eval { reduce(:+) / size.to_f },
 
-      :light_max                  => day.sensors.pluck(:light).max,
-      :light_min                  => day.sensors.pluck(:light).min,
-      :light_average              => day.sensors.pluck(:light).instance_eval { reduce(:+) / size.to_f }
+      :light_max                 => day.sensors.pluck(:light).max,
+      :light_min                 => day.sensors.pluck(:light).min,
+      :light_average             => day.sensors.pluck(:light).instance_eval { reduce(:+) / size.to_f }
     )
   end
 end
