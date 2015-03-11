@@ -2,40 +2,96 @@
   <div class="container-fluid">
     <div class="row">
       <h1>Estadísticas</h1>
-          <h4>Selecciona:</h4>
           <!--  Botones de estadisticas -->
-          <div id="btn-group" class="col-md-12">
-            <button class="statisticButton humidity btn" id="humidityStat">Humedad</button>
-            <button class="statisticButton floor btn"    id="floorStat">Humedad del Suelo</button>
-            <button class="statisticButton temp btn"     id="tempStat">Temperatura</button>
-            <button class="statisticButton wind btn"     id="windStat">Viento</button>
-            <button class="statisticButton ph btn"       id="phStat">pH</button>
-            <button class="statisticButton light btn"    id="lightStat">Luz</button>
-            <button class="statisticButton all btn"      id="allStat">Todos</button>
+          <div class="col-lg-12">
+            <h4>Hola, <span id="username"><%= @current_user.username %></span>. Éstas son tus estadísticas:</h4>
+            <% @terminals.each do |terminal, index| %>
+            <div class="panel panel-statistics">
+              <div class="panel-heading">
+                Para el terminal <b><%= terminal.name %></b>
+              </div>
+              <div class="panel-body">
+                <div class="row">
+                  <div class="col-md-4">
+                  Últimos datos:
+                  <ul>
+                  <li>Termperatura del suelo:</li>
+                    <ul>
+                      <li>Máxima: <%= terminal.days.last.temperature_floor_max %></li>
+                      <li>Mínima: <%= terminal.days.last.temperature_floor_min %></li>
+                      <li>Media: <%= terminal.days.last.temperature_floor_average %></li>
+                    </ul>
+                  <li>Termperatura del aire:</li>
+                    <ul>
+                      <li>Máxima: <%= terminal.days.last.temperature_air_max %></li>
+                      <li>Mínima: <%= terminal.days.last.temperature_air_min %></li>
+                      <li>Media: <%= terminal.days.last.temperature_air_average %></li>
+                    </ul>
+                  <li>Humedad del suelo:</li>
+                    <ul>
+                      <li>Máxima: <%= terminal.days.last.humidity_floor_max %></li>
+                      <li>Mínima: <%= terminal.days.last.humidity_floor_min %></li>
+                      <li>Media: <%= terminal.days.last.humidity_floor_average %></li>
+                    </ul>
+                  <li>Humedad del aire:</li>
+                    <ul>
+                      <li>Máxima: <%= terminal.days.last.humidity_air_max %></li>
+                      <li>Mínima: <%= terminal.days.last.humidity_air_min %></li>
+                      <li>Media: <%= terminal.days.last.humidity_air_average %></li>
+                    </ul>
+                  <li>Luz:</li>
+                    <ul>
+                      <li>Máxima: <%= terminal.days.last.light_max %></li>
+                      <li>Mínima: <%= terminal.days.last.light_min %></li>
+                      <li>Media: <%= terminal.days.last.light_average %></li>
+                    </ul>
+                  </ul>
+              </div>
+              <div class="col-md-8">
+                Gráfica: <span></span>
+                <div class="canvasContainer" id="<%=terminal.id.to_s %>">
+                  <canvas id="canvas<%= terminal.id.to_s %>" class="canvas"></canvas>
+                </div>
+              </div>
+              </div>
+            </div>
+            <% end %>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+
+              </div>
+              <div class="panel-body">
+                <div class="row">
+                      <button class="btn wind btn"     id="canvasHa">Humedad del Aire</button>
+                      <button class="btn floor btn"    id="canvasHf">Humedad del Suelo</button>
+                      <button class="btn temp btn"     id="canvasTa">Temperatura del Aire</button>
+                      <button class="btn ph btn"       id="canvasTf">Temperatura del suelo</button>
+                      <button class="btn light btn"    id="canvasL">Luz</button>
+                      <button class="btn all btn"      id="allStat">Todos</button>
+                </div>
+                <div class="row">
+                  <div class="col-md-4 col-md-offset-4">
+                    <div class="form-group form-stats col-md-3">
+                      <label for="day">Día:</label>
+                      <input type="number" class="form-control" id="dayParam" value="10">
+                    </div>
+                    <div class="form-group form-stats col-md-3">
+                      <label for="month">Mes:</label>
+                      <input type="number" class="form-control" id="monthParam" value="3">
+                    </div>
+                    <div class="form-group form-stats col-md-3">
+                      <label for="year">Año:</label>
+                      <input type="number" class="form-control" id="yearParam" value="2015">
+                    </div>
+                    <div class="form-group form-stats col-md-3">
+                      <label for="year">Modo:</label>
+                      <input type="text" class="form-control" id="modeParam" value="d">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="col-md-12">
-        <!--  Panel de Estadisticas - Slider -->
-        <section id="statistics-slider">
-          <div class="canvasContainer" id="humidityStatContainer">
-            <h4>Humedad</h4><canvas id="canvasHumidity" class="canvas"></canvas>
-          </div>
-          <div class="canvasContainer" id="windStatContainer">
-            <h4>Viento</h4><canvas id="canvasWind" class="canvas"></canvas>
-          </div>
-          <div class="canvasContainer" id="floorStatContainer">
-            <h4>Humedad del Suelo</h4><canvas id="canvasFloor" class="canvas"></canvas>
-          </div>
-          <div class="canvasContainer" id="tempStatContainer">
-            <h4>Temperatura</h4><canvas id="canvasTemp" class="canvas"></canvas>
-          </div>
-          <div class="canvasContainer" id="phStatContainer">
-            <h4>ph</h4><canvas id="canvasPh" class="canvas"></canvas>
-          </div>
-          <div class="canvasContainer" id="lightStatContainer">
-            <h4>Luz</h4><canvas id="canvasLight" class="canvas"></canvas>
-          </div>
-        </section>
-      </div>
       </div>
     <i class="icon flaticon-right226" id="menu-toggle"></i>
   </div>
