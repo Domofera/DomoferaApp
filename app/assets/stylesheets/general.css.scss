@@ -90,8 +90,12 @@ hr {
   background-color: #f5f5f5;
 }
 
-.panel-body {
+.panel-data > .panel-body {
   font-size: 30px;
+}
+
+.form-stats {
+  text-align: center;
 }
 
 .panel {
