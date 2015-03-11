@@ -11,6 +11,7 @@ class UsersController < ApplicationController
 
 	def statistics
 		@current_user = current_user
+		@terminals = @current_user.terminals
 		render "statistics"
 	end
 
