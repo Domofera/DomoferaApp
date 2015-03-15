@@ -2,52 +2,60 @@
   <div class="container-fluid">
     <div class="row">
       <h1>Estadísticas</h1>
-          <!--  Botones de estadisticas -->
+          <div class="panel panel-data">
+            <div class="panel-heading">
+              <h4>Hola, <span id="username"><%= @current_user.username %></span>. Éstas son tus estadísticas:</h4>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group form-stats col-md-2">
+                    <label for="day">Día:</label>
+                    <input type="number" class="form-control" id="dayParam" value="20">
+                  </div>
+                  <div class="form-group form-stats col-md-2">
+                    <label for="month">Mes:</label>
+                    <input type="number" class="form-control" id="monthParam" value="2">
+                  </div>
+                  <div class="form-group form-stats col-md-2">
+                    <label for="year">Año:</label>
+                    <input type="number" class="form-control" id="yearParam" value="2015">
+                  </div>
+                  <div class="form-group form-stats col-md-3">
+                    <label for="mode">Medida:</label>
+                    <select id="modeParam" class="form-control selectpicker">
+                      <option>Día</option>
+                      <option>Mes</option>
+                      <option>Año</option>
+                    </select>
+                  </div>
+                  <div class="form-group form-stats col-md-3">
+                    <label for="attribute">Tipo de dato:</label>
+                    <select id="attributeParam" class="form-control selectpicker">
+                      <option>Temperatura del aire</option>
+                      <option>Temperatura del suelo</option>
+                      <option>Humedad del aire</option>
+                      <option>Humedad del suelo</option>
+                      <option>Luz</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <button class="btn btn-default" id="update-data">Actualizar</button>
+
+                </div>
+              </div>
+            </div>
+          </div>
           <div class="col-lg-12">
-            <h4>Hola, <span id="username"><%= @current_user.username %></span>. Éstas son tus estadísticas:</h4>
             <% @terminals.each do |terminal, index| %>
-            <div class="panel panel-statistics">
+            <div class="panel panel-data">
               <div class="panel-heading">
-                Para el terminal <b><%= terminal.name %></b>
+                <h3>Para el terminal <b><%= terminal.name %></b></h3>
               </div>
               <div class="panel-body">
                 <div class="row">
-                  <div class="col-md-4">
-                  Últimos datos:
-                  <ul>
-                  <li>Termperatura del suelo:</li>
-                    <ul>
-                      <li>Máxima: <%= terminal.days.last.temperature_floor_max %></li>
-                      <li>Mínima: <%= terminal.days.last.temperature_floor_min %></li>
-                      <li>Media: <%= terminal.days.last.temperature_floor_average %></li>
-                    </ul>
-                  <li>Termperatura del aire:</li>
-                    <ul>
-                      <li>Máxima: <%= terminal.days.last.temperature_air_max %></li>
-                      <li>Mínima: <%= terminal.days.last.temperature_air_min %></li>
-                      <li>Media: <%= terminal.days.last.temperature_air_average %></li>
-                    </ul>
-                  <li>Humedad del suelo:</li>
-                    <ul>
-                      <li>Máxima: <%= terminal.days.last.humidity_floor_max %></li>
-                      <li>Mínima: <%= terminal.days.last.humidity_floor_min %></li>
-                      <li>Media: <%= terminal.days.last.humidity_floor_average %></li>
-                    </ul>
-                  <li>Humedad del aire:</li>
-                    <ul>
-                      <li>Máxima: <%= terminal.days.last.humidity_air_max %></li>
-                      <li>Mínima: <%= terminal.days.last.humidity_air_min %></li>
-                      <li>Media: <%= terminal.days.last.humidity_air_average %></li>
-                    </ul>
-                  <li>Luz:</li>
-                    <ul>
-                      <li>Máxima: <%= terminal.days.last.light_max %></li>
-                      <li>Mínima: <%= terminal.days.last.light_min %></li>
-                      <li>Media: <%= terminal.days.last.light_average %></li>
-                    </ul>
-                  </ul>
-              </div>
-              <div class="col-md-8">
+              <div class="col-md-12">
                 Gráfica: <span></span>
                 <div class="canvasContainer" id="<%=terminal.id.to_s %>">
                   <canvas id="canvas<%= terminal.id.to_s %>" class="canvas"></canvas>
@@ -55,42 +63,8 @@
               </div>
               </div>
             </div>
+          </div>
             <% end %>
-            <div class="panel panel-default">
-              <div class="panel-heading">
-
-              </div>
-              <div class="panel-body">
-                <div class="row">
-                      <button class="btn wind btn"     id="canvasHa">Humedad del Aire</button>
-                      <button class="btn floor btn"    id="canvasHf">Humedad del Suelo</button>
-                      <button class="btn temp btn"     id="canvasTa">Temperatura del Aire</button>
-                      <button class="btn ph btn"       id="canvasTf">Temperatura del suelo</button>
-                      <button class="btn light btn"    id="canvasL">Luz</button>
-                      <button class="btn all btn"      id="allStat">Todos</button>
-                </div>
-                <div class="row">
-                  <div class="col-md-4 col-md-offset-4">
-                    <div class="form-group form-stats col-md-3">
-                      <label for="day">Día:</label>
-                      <input type="number" class="form-control" id="dayParam" value="10">
-                    </div>
-                    <div class="form-group form-stats col-md-3">
-                      <label for="month">Mes:</label>
-                      <input type="number" class="form-control" id="monthParam" value="3">
-                    </div>
-                    <div class="form-group form-stats col-md-3">
-                      <label for="year">Año:</label>
-                      <input type="number" class="form-control" id="yearParam" value="2015">
-                    </div>
-                    <div class="form-group form-stats col-md-3">
-                      <label for="year">Modo:</label>
-                      <input type="text" class="form-control" id="modeParam" value="d">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
       </div>
     <i class="icon flaticon-right226" id="menu-toggle"></i>
