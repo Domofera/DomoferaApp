@@ -42,7 +42,7 @@ class TerminalsController < ApplicationController
       else
       	 flash[:notice] = "El terminal no puede ser actualizado"
       end
-      redirect_to user_terminal_path
+      redirect_to user_terminals_path
 	end
 
 	def destroy
@@ -52,12 +52,12 @@ class TerminalsController < ApplicationController
 		else
 			flash[:notice] = "El terminal no puede ser eliminado"
 		end
-		redirect_to user_terminal_path
+		redirect_to user_terminals_path
 	end
 
 	private
 	def terminal_params
-		params.require(:terminal).permit(:name, :description, :password)
+		params.require(:terminal).permit(:name, :description, :password, :wifi_name, :wifi_password, :wifi_confirmation)
 	end
 
 	def create_first_day id
