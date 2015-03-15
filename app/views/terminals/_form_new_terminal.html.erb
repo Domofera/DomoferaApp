@@ -1,8 +1,12 @@
 <div class="col-md-4">
-    <%= form_for @terminal, inline_errors: false, :class => 'simple-form' do |f| %>
-      <%= f.text_field :name, :class => 'simple-input', :placeholder => 'Nombre del Terminal' %>
-      <%= f.text_field :description, :class => 'simple-input', :placeholder => 'Descripción'  %>
-      <%= f.password_field :password, :class => 'simple-input', :placeholder => 'Código'   %>
-      <%= f.submit "Crear terminal", :class => 'simple-submit' %>
+    <%= form_for @terminal, inline_errors: false, :class => 'form-control' do |f| %>
+      <label>Nombre del terminal: </label>
+      <%= f.text_field :name, :class => 'form-control' %>
+      <label>Descripción: </label>
+      <%= f.text_field :description, :class => 'form-control' %>
+      <label>Código: </label>
+      <%= f.password_field :password, :class => 'form-control' %>
+      <br>
+      <%= f.submit "Crear terminal", :class => 'btn btn-success' %>
     <% end %>
 </div>
