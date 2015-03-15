@@ -10,11 +10,11 @@ class SensorsController < ApplicationController
       @user = User.find_by_id(@terminal.user_id)
       if (correctData(@terminal, @user, data))
         @day = @terminal.days.find_by(day_name: data['day'], month: data['month'], year: data['year'])
-          if (@day.nil?)
-            @day = new_day(@terminal)
+           if (@day.nil?)
+            @day = new_day(@terminal, data)
             @day.save
            end
-          @sensor = Sensor.new(:day_id            => @day.id,
+           @sensor = Sensor.new(:day_id            => @day.id,
                                :humidity_air      => data['ha'],
                                :humidity_floor    => data['hf'],
                                :temperature_air   => data['ta'],
@@ -22,7 +22,7 @@ class SensorsController < ApplicationController
                                :light             => data['l']
                               )
             if (@sensor.save)
-              update_day_params(@day)
+            update_day_params(@day)
                 msg = { :status => "ok", :message => "Sensor created successfully"}
                 render :json => msg
             else
@@ -82,11 +82,38 @@ class SensorsController < ApplicationController
   end
 
   def getYearData(terminal, year)
-    terminal.days.where(:year => year)
+    months = []
+    12.times do |n|
+      month = getMonthData(terminal, n+1, year);
+      monthData = {
+        "temperature_floor_min" => month.pluck(:temperature_floor_min).instance_eval { reduce(:+) / size.to_f },
+        "temperature_floor_max" => month.pluck(:temperature_floor_max).instance_eval { reduce(:+) / size.to_f },
+        "temperature_floor_average" => month.pluck(:temperature_floor_average).instance_eval { reduce(:+) / size.to_f },
+
+        "humidity_floor_min" => month.pluck(:humidity_floor_min).instance_eval { reduce(:+) / size.to_f },
+        "humidity_floor_max" => month.pluck(:humidity_floor_max).instance_eval { reduce(:+) / size.to_f },
+        "humidity_floor_average" => month.pluck(:humidity_floor_average).instance_eval { reduce(:+) / size.to_f },
+
+        "temperature_air_min" => month.pluck(:temperature_air_min).instance_eval { reduce(:+) / size.to_f },
+        "temperature_air_max" => month.pluck(:temperature_air_max).instance_eval { reduce(:+) / size.to_f },
+        "temperature_air_average" => month.pluck(:temperature_air_average).instance_eval { reduce(:+) / size.to_f },
+
+        "humidity_air_min" => month.pluck(:humidity_air_min).instance_eval { reduce(:+) / size.to_f },
+        "humidity_air_max" => month.pluck(:humidity_air_max).instance_eval { reduce(:+) / size.to_f },
+        "humidity_air_average" => month.pluck(:humidity_air_average).instance_eval { reduce(:+) / size.to_f },
+
+        "light_min" => month.pluck(:light_min).instance_eval { reduce(:+) / size.to_f },
+        "light_max" => month.pluck(:light_max).instance_eval { reduce(:+) / size.to_f },
+        "light_average" => month.pluck(:light_average).instance_eval { reduce(:+) / size.to_f },
+      }
+      months.push(monthData)
+    end
+    return months
+    # terminal.days.where(:year => year)
   end
 
   def getMonthData(terminal, month, year)
-    terminal.days.where(:month => month, :year => year)[0]
+    terminal.days.where(:month => month, :year => year)
   end
 
   def isToday(day, month, year)
@@ -103,26 +130,26 @@ class SensorsController < ApplicationController
     return ((terminal) && (user) && (data['username'] == user.username))
   end
 
-  def new_day(terminal)
+  def new_day(terminal,data)
     return Day.new(:terminal_id => terminal.id,
-                   :day_name    => Time.now.day,
-                   :month       => Time.now.month,
-                   :year        => Time.now.year,
-                   :temperature_floor_max     => 0,
-                   :temperature_floor_min     => 0,
-                   :temperature_floor_average => 0,
-                   :temperature_air_max       => 0,
-                   :temperature_air_min       => 0,
-                   :temperature_air_average   => 0,
-                   :humidity_floor_max        => 0,
-                   :humidity_floor_min        => 0,
-                   :humidity_floor_average    => 0,
-                   :humidity_air_max          => 0,
-                   :humidity_air_min          => 0,
-                   :humidity_air_average      => 0,
-                   :light_max                 => 0,
-                   :light_min                 => 0,
-                   :light_average             => 0
+                   :day_name    => data['day'],
+                   :month       => data['month'],
+                   :year        => data['year'],
+                   :temperature_floor_max     => 0.0,
+                   :temperature_floor_min     => 0.0,
+                   :temperature_floor_average => 0.0,
+                   :temperature_air_max       => 0.0,
+                   :temperature_air_min       => 0.0,
+                   :temperature_air_average   => 0.0,
+                   :humidity_floor_max        => 0.0,
+                   :humidity_floor_min        => 0.0,
+                   :humidity_floor_average    => 0.0,
+                   :humidity_air_max          => 0.0,
+                   :humidity_air_min          => 0.0,
+                   :humidity_air_average      => 0.0,
+                   :light_max                 => 0.0,
+                   :light_min                 => 0.0,
+                   :light_average             => 0.0
                   )
   end
 
