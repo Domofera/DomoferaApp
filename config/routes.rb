@@ -15,7 +15,10 @@ Rails.application.routes.draw do
   resource :user do
     get :confirm, on: :collection
     get :statistics, on: :collection
-    resources :terminals, only: [:index, :show]
+    get :mygrove, on: :collection
+    get :irrigation, on: :collection
+    get :calendar, on: :collection
+    resources :terminals, only: [:index, :show, :update, :destroy]
     resources :todos, only: [:index, :show]
   end
 
