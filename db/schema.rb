@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150211194918) do
+ActiveRecord::Schema.define(version: 20150314184748) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,6 +59,9 @@ ActiveRecord::Schema.define(version: 20150211194918) do
     t.string   "password"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "wifi_name"
+    t.string   "wifi_password"
+    t.boolean  "wifi_confirmation"
   end
 
   create_table "todos", force: true do |t|
