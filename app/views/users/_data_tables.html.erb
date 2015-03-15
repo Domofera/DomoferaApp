@@ -1,0 +1,140 @@
+<% @terminals.each do |terminal| %>
+<h4>Terminal: <%= terminal.name %></h4>
+<div class="row">
+  <div class="col-md-4">
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Temperatura del suelo</th>
+          <th>Valor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Mínima</td>
+          <td><%= terminal.days.last.temperature_floor_min %></td>
+        </tr>
+        <tr>
+          <td>Máxima</td>
+          <td><%= terminal.days.last.temperature_floor_max %></td>
+        </tr>
+        <tr>
+          <td>Media</td>
+          <td><%= terminal.days.last.temperature_floor_average %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="col-md-4">
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Temperatura del aire</th>
+        <th>Valor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Mínima</td>
+        <td><%= terminal.days.last.temperature_air_min %></td>
+      </tr>
+      <tr>
+        <td>Máxima</td>
+        <td><%= terminal.days.last.temperature_air_max %></td>
+      </tr>
+      <tr>
+        <td>Media</td>
+        <td><%= terminal.days.last.temperature_air_average %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Humedad del suelo</th>
+        <th>Valor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Mínima</td>
+        <td><%= terminal.days.last.humidity_floor_min %></td>
+      </tr>
+      <tr>
+        <td>Máxima</td>
+        <td><%= terminal.days.last.humidity_floor_max %></td>
+      </tr>
+      <tr>
+        <td>Media</td>
+        <td><%= terminal.days.last.humidity_floor_average %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Humedad del aire</th>
+        <th>Valor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Mínima</td>
+        <td><%= terminal.days.last.humidity_air_min %></td>
+      </tr>
+      <tr>
+        <td>Máxima</td>
+        <td><%= terminal.days.last.humidity_air_max %></td>
+      </tr>
+      <tr>
+        <td>Media</td>
+        <td><%= terminal.days.last.humidity_air_average %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Nivel de luminosidad</th>
+        <th>Valor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Mínima</td>
+        <td><%= terminal.days.last.light_min %></td>
+      </tr>
+      <tr>
+        <td>Máxima</td>
+        <td><%= terminal.days.last.light_max %></td>
+      </tr>
+      <tr>
+        <td>Media</td>
+        <td><%= terminal.days.last.light_average %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+</div>
+<% end %>
