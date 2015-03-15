@@ -88,10 +88,7 @@ hr {
 
 .panel-data > .panel-heading {
   background-color: #f5f5f5;
-}
-
-.panel-data > .panel-body {
-  font-size: 30px;
+  color: #0cb6b6;
 }
 
 .form-stats {
@@ -103,6 +100,11 @@ hr {
   background-color: white;
   border-color: #ddd;
   text-align: center;
+}
+
+.btn-success {
+  background-color:  #0cb6b6;
+  border-color:  #0cb6b6;
 }
 
 i {
