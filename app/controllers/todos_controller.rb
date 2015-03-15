@@ -15,10 +15,10 @@ class TodosController < ApplicationController
     @todo = Todo.new todo_params.merge(:user_id => current_user.id)
     if @todo.save
       flash[:notice] = "Nueva tarea creada"
-      redirect_to user_path
+      redirect_to irrigation_user_path
     else
       flash[:notice] = @todo.errors.full_messages.to_a.join(", ")
-      redirect_to user_path
+      redirect_to irrigation_user_path
     end
   end
 
@@ -29,13 +29,13 @@ class TodosController < ApplicationController
   def update
     @todo = current_user.todos.find(params[:id])
     @todo.update_attributes todo_params
-    redirect_to user_path
+    redirect_to irrigation_user_path
   end
 
   def destroy
     @todo = current_user.todos.find(params[:id])
     @todo.destroy
-    redirect_to user_path
+    redirect_to irrigation_user_path
   end
 
   private
