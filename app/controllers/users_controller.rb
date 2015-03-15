@@ -4,8 +4,7 @@ class UsersController < ApplicationController
 
 	def show
 		@current_user = current_user
-		@todo = Todo.new
-		@todos = @current_user.todos
+		@terminals = @current_user.terminals
 		render "show"
 	end
 
@@ -13,6 +12,19 @@ class UsersController < ApplicationController
 		@current_user = current_user
 		@terminals = @current_user.terminals
 		render "statistics"
+	end
+
+	def irrigation
+		@current_user = current_user
+		@todo = Todo.new
+		@todos = @current_user.todos
+		render "irrigation"
+	end
+
+	def mygrove
+		@current_user = current_user
+		@terminals = @current_user.terminals
+		render "mygrove"
 	end
 
 	def new
