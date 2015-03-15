@@ -1,0 +1,85 @@
+<div id="page-content-wrapper">
+  <div class="container-fluid">
+  <div class="row">
+    <h2>Últimos datos recogidos</h2>
+    <% @terminals.each do |terminal| %>
+    <div class="col-xs-12 col-md-12 col-terminal">
+        <h3><%= terminal.name %></h3>
+      <div class="row">
+        <div class="col-xs-2 col-icon">
+          Temperatura del suelo
+        </div>
+          <div class="col-xs-1 col-data"><%= terminal.days.last.sensors.last.temperature_floor %></div>
+          <div class="col-xs-1 col-magnitud">ºC</div>
+          <div class="col-xs-6">
+           <div class="progress">
+            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="<%= terminal.days.last.sensors.last.temperature_floor %>"
+               aria-valuemin="-50" aria-valuemax="150" style="width:<%= (((terminal.days.last.sensors.last.temperature_floor) + 50) / 200) * 100 %>%"><%= terminal.days.last.sensors.last.temperature_floor %> ºC</div>
+          </div>
+        </div>
+      </div><!-- Temperatura del suelo -->
+
+      <div class="row">
+        <div class="col-xs-2 col-icon">
+          Temperatura del aire
+        </div>
+          <div class="col-xs-1 col-data"><%= terminal.days.last.sensors.last.temperature_air %></div>
+          <div class="col-xs-1 col-magnitud">ºC</div>
+          <div class="col-xs-6">
+           <div class="progress">
+            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="<%= terminal.days.last.sensors.last.temperature_floor %>"
+               aria-valuemin="0" aria-valuemax="100" style="width:<%= (((terminal.days.last.sensors.last.temperature_air) + 50) / 200) * 100 %>%"><%= terminal.days.last.sensors.last.temperature_air %> ºC</div>
+          </div>
+        </div>
+      </div><!-- Temperatura del aire -->
+
+      <div class="row">
+        <div class="col-xs-2 col-icon">
+          Humedad del suelo
+        </div>
+          <div class="col-xs-1 col-data"><%= terminal.days.last.sensors.last.humidity_floor %></div>
+          <div class="col-xs-1 col-magnitud">%</div>
+          <div class="col-xs-6">
+           <div class="progress">
+            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<%= terminal.days.last.sensors.last.temperature_floor %>"
+               aria-valuemin="0" aria-valuemax="100" style="width:<%= terminal.days.last.sensors.last.humidity_floor %>%"><%= terminal.days.last.sensors.last.humidity_floor %> %</div>
+          </div>
+        </div>
+      </div><!-- Humedad del suelo -->
+
+      <div class="row">
+        <div class="col-xs-2 col-icon">
+          Humedad del aire
+        </div>
+          <div class="col-xs-1 col-data"><%= terminal.days.last.sensors.last.humidity_air %></div>
+          <div class="col-xs-1 col-magnitud">%</div>
+          <div class="col-xs-6">
+           <div class="progress">
+            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<%= terminal.days.last.sensors.last.temperature_floor %>"
+               aria-valuemin="0" aria-valuemax="100" style="width:<%= terminal.days.last.sensors.last.humidity_air %>%"><%= terminal.days.last.sensors.last.humidity_air %> %</div>
+          </div>
+        </div>
+      </div><!-- Humedad del aire -->
+
+      <div class="row">
+        <div class="col-xs-2 col-icon">
+          Luminosidad
+        </div>
+          <div class="col-xs-1 col-data"><%= terminal.days.last.sensors.last.light %></div>
+          <div class="col-xs-1 col-magnitud">%</div>
+          <div class="col-xs-6">
+           <div class="progress">
+            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="<%= terminal.days.last.sensors.last.temperature_floor %>"
+               aria-valuemin="0" aria-valuemax="100" style="width:<%= terminal.days.last.sensors.last.light %>%"><%= terminal.days.last.sensors.last.light %> %</div>
+          </div>
+        </div>
+      </div><!-- luminosidad -->
+
+
+    </div><!-- FIN Grupo de valores de un terminal -->
+    <% end %>
+  </div>
+</div>
+</div>
+</div>
+<i class="icon flaticon-right226" id="menu-toggle"></i>
