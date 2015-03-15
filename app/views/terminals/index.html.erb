@@ -1,35 +1,37 @@
   <div id="page-content-wrapper">
     <div class="container-fluid">
       <h2>Terminales</h2>
-        <p class="orange" id="new-terminal">Nuevo Terminal</p>
-        <div class="row" id="new-terminal-form">
+      <button id="new-terminal" class="btn btn-default">Nuevo Terminal</button>
+      <div class="row">
+        <div class="col-md-12" id="new-terminal-form">
           <%= render "form_new_terminal" %>
         </div>
+      </div>
+      <br>
       <div class="row">
         <% @terminals.each_with_index do |terminal, index| %>
+        <%= form_for terminal, inline_errors: false, :class => 'simple-form' do |f| %>
           <div class="col-lg-6">
             <div class="panel panel-data centered">
               <div class="panel-heading">
                 <i class="icon flaticon-wifi20"></i>
-                <%= terminal.name %>
-                <button type="button" class="close">
-                  <span aria-hidden="true">x</span>
-                </button>
+                <%= f.text_field :name, :class => 'form-control', :value => terminal.name  %>
               </div>
               <div class="panel-body terminals">
-                <h5>Descripción: <%= terminal.description %></h5>
-                <h5>Código: <%= terminal.password %></h5>
-                <h5>Datos:</h5>
-                <ul>
-                  <li>username: <%= current_user.username %></li>
-                  <li>id: <%= terminal.id %></li>
-                  <li>password: <%= terminal.password %></li>
-                  <li>day:
-                </ul>
+                <label>Descripcion:</label>
+                <h5><%= f.text_field :description, :class => 'form-control', :value => terminal.description %></h5>
+                <label>Código</label>
+                <h5><%= f.text_field :password, :class => 'form-control', :value => terminal.password  %></h5>
+                <label>Nombre red wifi:</label>
+                <h5><%= f.text_field :wifi_name, :class => 'form-control', :value => terminal.wifi_name %></h5>
+                <label>Contraseña red wifi:</label>
+                <h5><%= f.text_field :wifi_password, :class => 'form-control', :value => terminal.wifi_password %></h5>
+                <%= f.submit "Actualizar terminal", :class => 'btn btn-success' %>
               </div>
           </div>
         </div>
         <% end %>
+      <% end %>
       </div>
         <i class="icon flaticon-right226" id="menu-toggle"></i>
     </div>
