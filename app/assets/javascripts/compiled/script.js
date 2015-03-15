@@ -4060,13 +4060,6 @@ $( document ).ready(function() {
     $('#icon').addClass('icon ' + icon);
   }
 
-  var loadingImg = function() {
-    $('#loading').src = "/assets/loading.gif";
-  }
-
-  var stopLoading = function() {
-    $('#loading').remove();
-  }
 
   var celsius = function(value) {
     return Math.round(value - 273.15);
@@ -4078,14 +4071,12 @@ $( document ).ready(function() {
   $.ajax({
     url: url,
     type: 'GET',
-    beforeSend: function(xhr) {
-      loadingImg();
-    },
+    crossDomain: true,
     complete: function() {
-      stopLoading();
+      console.log('Weather complete');
     },
     success: function(data) {
-      stopLoading();
+      console.log("Weather ok");
       getData(data);
     }
   });
