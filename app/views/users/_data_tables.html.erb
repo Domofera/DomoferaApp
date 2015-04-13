@@ -1,5 +1,6 @@
 <% @terminals.each do |terminal| %>
 <h4>Terminal: <%= terminal.name %></h4>
+<% if (terminal.days.last!=nil) %>
 <div class="row">
   <div class="col-md-4">
   <div class="table-responsive">
@@ -137,4 +138,5 @@
 </div>
 
 </div>
+<% end %>
 <% end %>
