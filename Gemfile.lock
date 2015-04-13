@@ -35,6 +35,8 @@ GEM
       extlib (>= 0.9.15)
       multi_json (>= 1.0.0)
     bcrypt (3.1.9)
+    bootstrap3-datetimepicker-rails (4.7.14)
+      momentjs-rails (>= 2.8.1)
     bootstrap_form (2.2.0)
     builder (3.2.2)
     carrierwave (0.10.0)
@@ -98,6 +100,8 @@ GEM
       mime-types (>= 1.16, < 3)
     mime-types (2.4.3)
     minitest (5.4.3)
+    momentjs-rails (2.9.0)
+      railties (>= 3.1)
     multi_json (1.10.1)
     multipart-post (2.0.0)
     netrc (0.10.0)
@@ -207,6 +211,7 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt (~> 3.1.7)
+  bootstrap3-datetimepicker-rails (~> 4.7.14)
   bootstrap_form
   carrierwave
   email_validator
@@ -218,6 +223,7 @@ DEPENDENCIES
   jquery-rails
   json
   kaminari
+  momentjs-rails (>= 2.9.0)
   newrelic_rpm
   nickshows
   paperclip (~> 4.1)

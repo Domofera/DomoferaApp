@@ -14,3 +14,5 @@
 //= require jquery_ujs
 //= require jquery.easing.min.js
 //= require bootstrap.min.js
+//= require moment
+//= require bootstrap-datetimepicker

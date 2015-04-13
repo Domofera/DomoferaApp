@@ -3,7 +3,7 @@ class TerminalsController < ApplicationController
 
 	def index
 		@terminal = Terminal.new
-		@terminals = @current_user.terminals
+		@terminals = @current_user.terminals.order("terminals.created_at DESC")
 		render "index", :layout => true
 	end
 
@@ -55,12 +55,32 @@ class TerminalsController < ApplicationController
 		redirect_to user_terminals_path
 	end
 
+	def get_terminal_file
+		@terminal = Terminal.find_by_id(params['id'])
+		@user     = User.find_by_id(@terminal.user_id)
+		if correctData(@terminal, @user, params)
+			msg = '{ "username" : "' + @user.username + '", "id" : ' + @terminal.id.to_s + ', "password" : ' + @terminal.password.to_s + '}'
+			# render :json => msg
+			send_data msg, :filename => 'config.json', :type => 'text/json'
+		else
+			msg = { :error => 'Data is incorrect'}
+			render :json => msg
+		end
+	end
+
 	private
 	def terminal_params
-		params.require(:terminal).permit(:name, :description, :password, :wifi_name, :wifi_password, :wifi_confirmation)
+		params.require(:terminal).permit(:name, :description, :password, :wifi_name,
+		:wifi_password, :wifi_confirmation, :irrigation, :irrigation_start, :irrigation_end)
 	end
 
 	def create_first_day id
 			Day.new(:terminal_id => id)
+	end
+
+	def correctData(terminal, user, data)
+		return ((terminal) && (user) &&
+						(data['password'] == terminal.password) &&
+						(data['username'] == user.username))
 	end
 end

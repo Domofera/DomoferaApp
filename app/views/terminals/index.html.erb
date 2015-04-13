@@ -26,9 +26,27 @@
                 <h5><%= f.text_field :wifi_name, :class => 'form-control', :value => terminal.wifi_name %></h5>
                 <label>Contraseña red wifi:</label>
                 <h5><%= f.text_field :wifi_password, :class => 'form-control', :value => terminal.wifi_password %></h5>
+                <div class="well well-lg">
+                  <h3>Riego</h3>
+                  <label>Inicio del riego:</label>
+                  <h5><%= f.date_field :irrigation_start, :class => 'form-control', :value => terminal.irrigation_start  %></h5>
+                  <label>Fin del riego:</label>
+                  <h5><%= f.date_field :irrigation_end, :class => 'form-control', :value => terminal.irrigation_end  %></h5>
+                  <div class="onoffswitch">
+                    <%= f.check_box :irrigation, :class=>"onoffswitch-checkbox", :id=>"myonoffswitch" %>
+                    <!-- <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked> -->
+                    <label class="onoffswitch-label" for="myonoffswitch">
+                        <span class="onoffswitch-inner"></span>
+                        <span class="onoffswitch-switch"></span>
+                    </label>
+                  </div>
+                </div>
                 <%= f.submit "Actualizar terminal", :class => 'btn btn-success' %>
               </div>
           </div>
+          <a class="btn btn-default" href="/api/config/data?id=<%=terminal.id%>&username=<%=@current_user.username%>&password=<%=terminal.password%>">
+            Descargar
+          </a>
         </div>
         <% end %>
       <% end %>

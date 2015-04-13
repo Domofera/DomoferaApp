@@ -23,6 +23,9 @@ gem 'uglifier', '>= 1.3.0'
 gem "font-awesome-rails"
 gem "spring", group: :development
 
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.7.14'
+
 gem 'unicorn'
 gem 'google-api-client', '>= 0.6.2', :require => 'google/api_client'
 

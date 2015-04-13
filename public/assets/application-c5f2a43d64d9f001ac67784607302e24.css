@@ -10,15 +10,15 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_self
+
  */
-
-
+/* line 18, /Users/elenatorro/Documents/projects/domofera/domoferaapp_old/app/assets/stylesheets/application.css.scss */
 h5 {
   font-size: 1.7em;
   font-weight: normal;
 }
 
+/* line 23, /Users/elenatorro/Documents/projects/domofera/domoferaapp_old/app/assets/stylesheets/application.css.scss */
 .main-link {
   padding: 10px;
   font-size: 1.3em;
@@ -28,6 +28,7 @@ h5 {
   color: white;
 }
 
+/* line 32, /Users/elenatorro/Documents/projects/domofera/domoferaapp_old/app/assets/stylesheets/application.css.scss */
 .main-link:hover {
   color: black;
 }

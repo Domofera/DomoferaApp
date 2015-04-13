@@ -23,7 +23,7 @@ class SensorsController < ApplicationController
                               )
             if (@sensor.save)
             update_day_params(@day)
-                msg = { :status => "ok", :message => "Sensor created successfully"}
+                msg = { :status => "ok", :message => "Sensor created successfully", :irrigation => checkIrrigation(@terminal)}
                 render :json => msg
             else
                 sendError
@@ -109,7 +109,6 @@ class SensorsController < ApplicationController
       months.push(monthData)
     end
     return months
-    # terminal.days.where(:year => year)
   end
 
   def getMonthData(terminal, month, year)
@@ -176,5 +175,16 @@ class SensorsController < ApplicationController
       :light_min                 => day.sensors.pluck(:light).min,
       :light_average             => day.sensors.pluck(:light).instance_eval { reduce(:+) / size.to_f }
     )
+  end
+
+  def checkIrrigation(terminal)
+    return (
+       (terminal.irrigation)
+      #  &&
+      #  (terminal.irrigation_start!=nil) &&
+      #  (terminal.irrigation_end!=nil) &&
+      #  (terminal.irrigation_start < DateTime.now) &&
+      #  (terminal.irrigation_end > DateTime.now)
+       )
   end
 end
