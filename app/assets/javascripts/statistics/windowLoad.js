@@ -210,7 +210,7 @@ function getYearArrayData(data, value) {
 };
 
 function getTerminalData(username, id, day, month, year, mode, context, attribute) {
-  var url  = "http://localhost:3000/api/statistics?username="+ username
+  var url  = "/api/statistics?username="+ username
                                                  + "&id="    + id
                                                  + "&day="   + day
                                                  + "&month=" + month

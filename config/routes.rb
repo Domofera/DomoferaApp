@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     get :confirm, on: :collection
     get :statistics, on: :collection
     get :mygrove, on: :collection
+    get :mygroveview, on: :collection
     get :irrigation, on: :collection
     get :calendar, on: :collection
     resources :terminals, only: [:index, :show, :update, :destroy]

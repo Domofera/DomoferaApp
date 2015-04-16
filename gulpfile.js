@@ -27,7 +27,10 @@ var calendar = ['app/assets/javascripts/calendar/moment.min.js',
               ];
 var calendarstyle = ['app/assets/stylesheets/fullcalendar/fullcalendar.min.css',
                      'app/assets/stylesheets/fullcalendar/fullcalendar.print.css'
-]
+];
+
+var aubengine = ['app/assets/javascripts/aubengine/Aubengine.js',
+                'app/assets/javascripts/aubengine/mygrove.js'];
 
 /************* Files *************/
 gulp.task('style', function() {
@@ -42,6 +45,7 @@ gulp.task('calendarstyle', function() {
   .pipe(concat('fullcalendar.css'))
   .pipe(gulp.dest(styleDestPath));
 });
+
 
 gulp.task('scripts', function() {
   return gulp.src(scriptPath + scriptExtension)
@@ -65,6 +69,12 @@ gulp.task('calendar', function() {
   .pipe(gulp.dest('app/assets/javascripts/compiled'));
 })
 
+gulp.task('aubengine', function() {
+  return gulp.src(aubengine)
+  .pipe(concat('aubengine.js'))
+  .pipe(gulp.dest('app/assets/javascripts/compiled'));
+});
+
 /************* Others *************/
 gulp.task('lint', function() {
   return gulp.src(scriptPath + scriptExtension)
@@ -75,7 +85,8 @@ gulp.task('lint', function() {
 gulp.task('watch', function() {
   gulp.watch(scriptPath + scriptExtension, ['lint', 'scripts']);
   gulp.watch('app/assets/javascripts/statistics/*.js', ['chartScripts']);
+  gulp.watch('app/assets/javascripts/aubengine/*.js', ['aubengine']);
   gulp.watch(styleRootPath + styleRootExtension, ['style']);
 });
 
-gulp.task('default', ['lint', 'style', 'scripts', 'chartScripts', 'calendar', 'calendarstyle', 'watch']);
+gulp.task('default', ['lint', 'style', 'scripts', 'chartScripts', 'aubengine', 'calendar', 'calendarstyle', 'watch']);

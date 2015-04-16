@@ -27,6 +27,10 @@ class UsersController < ApplicationController
 		render "mygrove"
 	end
 
+	def mygroveview
+		render "mygroveview"
+	end
+
 	def new
   	@user = User.new
   	render "new", :layout => false

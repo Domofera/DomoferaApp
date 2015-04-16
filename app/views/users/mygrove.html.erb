@@ -5,6 +5,7 @@
     <% @terminals.each do |terminal| %>
     <div class="col-xs-12 col-md-12 col-terminal">
         <h3><%= terminal.name %></h3>
+        <% if terminal.days.last!=nil %>
       <div class="row">
         <div class="col-xs-2 col-icon">
           Temperatura del suelo
@@ -75,11 +76,10 @@
         </div>
       </div><!-- luminosidad -->
 
-
+      <% end %>
     </div><!-- FIN Grupo de valores de un terminal -->
     <% end %>
   </div>
-</div>
 </div>
 </div>
 <i class="icon flaticon-right226" id="menu-toggle"></i>
