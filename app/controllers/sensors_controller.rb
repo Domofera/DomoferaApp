@@ -87,6 +87,17 @@ class SensorsController < ApplicationController
     end
   end
 
+  def rv_data
+    @terminal = Terminal.find_by_id(data['id'])
+    if (@terminal)
+      respond_to do |format|
+        format.json {render :json => getLastData(@terminal) }
+      end
+    else
+      send_error
+    end
+  end
+
 
   private
   def data
