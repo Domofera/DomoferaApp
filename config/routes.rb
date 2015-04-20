@@ -34,5 +34,9 @@ Rails.application.routes.draw do
     scope '/config/data' do
       get '/' => 'terminals#get_terminal_file'
     end
+
+    scope '/lastdata' do
+      get '/' => 'sensors#last_data'
+    end
   end
 end

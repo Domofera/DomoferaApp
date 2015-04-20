@@ -26,17 +26,17 @@ class SensorsController < ApplicationController
                 msg = { :status => "ok", :message => "Sensor created successfully", :irrigation => checkIrrigation(@terminal)}
                 render :json => msg
             else
-                sendError
+                send_error
             end #end sensor saved
         else
-            sendError
+            send_error
         end #end correct data
       else
-        sendError
+        send_error
       end#end terminal
   end
 
-  def sendError
+  def send_error
     respond_to do |format|
       msg = { :status => "bad", :message => 'Incorrect parameters'}
       format.json  { render :json => msg }
@@ -61,20 +61,42 @@ class SensorsController < ApplicationController
             format.json {render :json => getYearData(@terminal, data['year']) }
           end
         else
-          sendError
+          send_error
         end
       else
-        sendError
+        send_error
       end #incorrect_data
     else
-      sendError
+      send_error
     end #no_terminal
+  end
+
+  def last_data
+    @terminal = Terminal.find_by_id(data['id'])
+    if (@terminal)
+      @user = User.find_by_id(@terminal.user_id)
+      if (correctData(@terminal, @user, data))
+        respond_to do |format|
+          format.json {render :json => getLastData(@terminal) }
+        end
+      else
+        send_error
+      end
+    else
+      send_error
+    end
   end
 
 
   private
   def data
     params
+  end
+
+  def getLastData(terminal)
+    if (terminal.days.last!=nil)
+      return terminal.days.last
+    end
   end
 
   def getDayData(terminal, day, month, year)
